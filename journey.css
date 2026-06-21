@@ -1,0 +1,138 @@
+.journey-section {
+  position: relative;
+  background: #02020c; /* Match portfolio dark theme */
+  color: #fff;
+}
+
+.journey-wrapper {
+  height: 750vh; /* Determines how long the side-scroll lasts */
+  position: relative;
+}
+
+.journey-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.05) 0%, transparent 50%);
+}
+
+.journey-track {
+  display: flex;
+  gap: 15vw;
+  padding: 0 50vw; /* Start with items off-screen */
+  will-change: transform;
+  align-items: center;
+  height: 100%;
+}
+
+.milestone {
+  width: 380px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.milestone::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  border-radius: 20px;
+  background: linear-gradient(45deg, transparent, rgba(124, 58, 237, 0.5), transparent);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.milestone:hover::before {
+  opacity: 1;
+}
+
+.milestone.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.milestone-date {
+  color: #7c3aed;
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.milestone-title {
+  color: #fafaf9;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.milestone-desc {
+  color: #94a3b8;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+/* Rover Styles */
+.rover-container {
+  position: absolute;
+  bottom: 15vh;
+  left: 15vw; /* Fixed position while the background moves */
+  width: 250px;
+  z-index: 10;
+  will-change: transform;
+}
+
+.rover-svg {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.5));
+}
+
+.wheel {
+  will-change: transform;
+}
+
+/* Add a glowing ground line for the rover to drive on */
+.ground-line {
+  position: absolute;
+  bottom: 15vh; /* Aligns with rover wheels */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.5), transparent);
+  z-index: 5;
+}
+
+/* Background grid to show movement */
+.grid-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400vw; /* Massive width */
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(124, 58, 237, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 58, 237, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: 0;
+  pointer-events: none;
+  will-change: transform;
+}

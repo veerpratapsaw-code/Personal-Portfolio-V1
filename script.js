@@ -162,7 +162,7 @@ const scrollSpyObserver = new IntersectionObserver((entries) => {
 
   sections.forEach(section => {
 
-    if(['about', 'skills', 'projects'].includes(section.id)) {
+    if(['about', 'skills', 'journey', 'projects'].includes(section.id)) {
       scrollSpyObserver.observe(section);
     }
   });
