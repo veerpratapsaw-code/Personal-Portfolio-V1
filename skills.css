@@ -1,0 +1,342 @@
+@import url("https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+.skillImg img {
+  height: 80px;
+}
+
+.skillCard {
+  width: 18%;
+  background: linear-gradient(180deg, #1a1038 0%, #130c2e 50%, #0f0b22 100%);
+  border: 1px solid #7c3aed;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.15);
+  color: #f8fafc;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.divider {
+  width: 90%;
+  height: 2px;
+  background-color: #7c3aed;
+  margin: 5px;
+}
+
+.skillImg {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.SkillTitle {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.skillBody {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+.skillBody p {
+  font-weight: 400;
+  letter-spacing: normal;
+}
+
+.skillList {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  padding: 10px;
+}
+
+.skillList ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.skillList li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: normal;
+}
+
+.skillList li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+
+  background-image: url("assets/SVG/Tick.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  width: 18px;
+  height: 18px;
+}
+
+.sec2Cards {
+  display: flex;
+  justify-content: space-around;
+  padding: 30px;
+}
+.skillHeading {
+  display: flex;
+  font-size: 30px;
+  justify-content: center;
+  padding: 20px;
+  margin: 50px 0px;
+}
+
+.orbit-container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+}
+
+.center-logo {
+  position: absolute;
+
+  width: 100px;
+  height: 100px;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+}
+
+.orbit {
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+
+  border-radius: 50%;
+  border: 1px solid transparent;
+  padding: 50%;
+  animation: rotateOrbit 30s linear infinite;
+}
+@keyframes rotateOrbit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+.center-logo img {
+  width: 80px;
+}
+.icon {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  margin-top: -30px;
+  margin-left: -30px;
+}
+
+.icon1 {
+  animation: rotateIcon1 30s linear infinite;
+}
+@keyframes rotateIcon1 {
+  0% {
+    transform: rotate(0deg) translate(220px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg) translate(220px) rotate(-360deg);
+  }
+}
+
+.icon2 {
+  animation: rotateIcon2 30s linear infinite;
+}
+@keyframes rotateIcon2 {
+  0% {
+    transform: rotate(36deg) translate(220px) rotate(-36deg);
+  }
+  100% {
+    transform: rotate(36deg) translate(220px) rotate(-396deg);
+  }
+}
+
+.icon3 {
+  animation: rotateIcon3 30s linear infinite;
+}
+@keyframes rotateIcon3 {
+  0% {
+    transform: rotate(72deg) translate(220px) rotate(-72deg);
+  }
+  100% {
+    transform: rotate(72deg) translate(220px) rotate(-432deg);
+  }
+}
+
+.icon4 {
+  animation: rotateIcon4 30s linear infinite;
+}
+@keyframes rotateIcon4 {
+  0% {
+    transform: rotate(108deg) translate(220px) rotate(-108deg);
+  }
+  100% {
+    transform: rotate(108deg) translate(220px) rotate(-468deg);
+  }
+}
+
+.icon5 {
+  animation: rotateIcon5 30s linear infinite;
+}
+@keyframes rotateIcon5 {
+  0% {
+    transform: rotate(144deg) translate(220px) rotate(-144deg);
+  }
+  100% {
+    transform: rotate(144deg) translate(220px) rotate(-504deg);
+  }
+}
+
+.icon6 {
+  animation: rotateIcon6 30s linear infinite;
+}
+@keyframes rotateIcon6 {
+  0% {
+    transform: rotate(180deg) translate(220px) rotate(-180deg);
+  }
+  100% {
+    transform: rotate(180deg) translate(220px) rotate(-540deg);
+  }
+}
+
+.icon7 {
+  animation: rotateIcon7 30s linear infinite;
+}
+@keyframes rotateIcon7 {
+  0% {
+    transform: rotate(216deg) translate(220px) rotate(-216deg);
+  }
+  100% {
+    transform: rotate(216deg) translate(220px) rotate(-576deg);
+  }
+}
+
+.icon8 {
+  animation: rotateIcon8 30s linear infinite;
+}
+@keyframes rotateIcon8 {
+  0% {
+    transform: rotate(252deg) translate(220px) rotate(-252deg);
+  }
+  100% {
+    transform: rotate(252deg) translate(220px) rotate(-612deg);
+  }
+}
+
+.icon9 {
+  animation: rotateIcon9 30s linear infinite;
+}
+@keyframes rotateIcon9 {
+  0% {
+    transform: rotate(288deg) translate(220px) rotate(-288deg);
+  }
+  100% {
+    transform: rotate(288deg) translate(220px) rotate(-648deg);
+  }
+}
+
+.icon10 {
+  animation: rotateIcon10 30s linear infinite;
+}
+@keyframes rotateIcon10 {
+  0% {
+    transform: rotate(324deg) translate(220px) rotate(-324deg);
+  }
+  100% {
+    transform: rotate(324deg) translate(220px) rotate(-684deg);
+  }
+}
+
+.icon img {
+  width: 50px;
+  height: 50px;
+}
+
+.techStack {
+  display: flex;
+  justify-content: space-between;
+  padding: 10%;
+  background:
+    radial-gradient(
+      circle at 24% 66%,
+      rgba(124, 58, 237, 0.208),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(59, 130, 246, 0.15),
+      transparent 40%
+    ),
+    #02020c;
+}
+
+.techStackText {
+  text-align: right;
+  gap: 2rem;
+  display: flex;
+  max-width: 45%;
+  flex-direction: column;
+}
+.techStackHeading {
+  display: flex;
+  font-size: 80px;
+  justify-content: end;
+}
+.techStackLabel {
+  font-size: 24px;
+  letter-spacing: -0.03rem;
+  position: relative;
+  bottom: -40px;
+}
+.techStackBody {
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #cbd5e1;
+  background: linear-gradient(
+    90deg,
+    rgba(124, 58, 237, 0.03) 0%,
+    rgba(124, 58, 237, 0.1) 100%
+  );
+  border-right: 4px solid #7c3aed;
+  padding: 24px 30px;
+  border-radius: 20px 0 0 20px;
+  box-shadow: -5px 5px 20px rgba(124, 58, 237, 0.08);
+  text-align: right;
+  backdrop-filter: blur(10px);
+}
+
+.techStackBody p {
+  margin-bottom: 16px;
+}
+
+.techStackBody p:last-child {
+  margin-bottom: 0;
+}

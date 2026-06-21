@@ -1,0 +1,146 @@
+#projects {
+  padding: 100px 5%;
+  background: #02020c;
+  position: relative;
+  z-index: 20;
+}
+
+.projectsHeading {
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projectsHeading h5 {
+  color: #7c3aed;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.projectsHeading h1 {
+  font-size: 4rem;
+  color: #fff;
+  margin: 0;
+}
+
+.minimal-projects-list {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.minimal-project {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 20px;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.minimal-project:hover {
+  background: rgba(124, 58, 237, 0.05);
+  padding-left: 50px;
+}
+
+.minimal-project:hover .mp-title {
+  color: #c084fc;
+}
+
+.minimal-project:hover .mp-arrow {
+  transform: translate(10px, -10px);
+  color: #c084fc;
+}
+
+.mp-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mp-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  transition: color 0.3s ease;
+  line-height: 1;
+  margin: 0;
+}
+
+.mp-tags {
+  font-size: 1rem;
+  color: #a0a0a0;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 1px;
+}
+
+.mp-arrow {
+  font-size: 2.5rem;
+  font-weight: 300;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#project-preview-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 450px;
+  height: 280px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.8);
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 1000;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  border: 1px solid rgba(124, 58, 237, 0.5);
+}
+
+#project-preview-image.active {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#project-preview-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.minimal-projects-list .divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .mp-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .mp-title {
+    font-size: 1.8rem;
+  }
+  .minimal-project {
+    padding: 20px 10px;
+  }
+  .minimal-project:hover {
+    padding-left: 20px;
+  }
+  #project-preview-image {
+    display: none !important; /* Hide floating image on mobile */
+  }
+  .mp-arrow {
+    font-size: 1.5rem;
+  }
+}

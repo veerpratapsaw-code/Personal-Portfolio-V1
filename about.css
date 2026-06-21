@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+.About {
+  display: flex;
+  background: #02020c;
+  gap: 5%;
+  margin: 0px 30px;
+  border: 2px solid transparent;
+  border-radius: 30px;
+  max-height: 100%;
+  min-height: 100vh;
+  flex-direction: row;
+      align-items: center;
+
+}
+.topDropMerge {
+  width: 100%;
+  height: 20vh;
+  background: linear-gradient(#11003e, #02020c);
+}
+.statsContainer {
+  width: 60%;
+  height: fit-content;
+}
+
+.sec2text h1 {
+  margin-bottom: 0.5rem;
+  font-size: 50px;
+}
+.sec2text p {
+  font-weight: 300;
+  letter-spacing: 0em;
+  line-height: 1.6;
+  margin: 0.75rem 0px;
+  font-size: 1.1rem;
+  color: #cbd5e1;
+}
+
+.rightAbout {
+  width: 35%;
+  padding: 30px 20px;
+  background: linear-gradient(180deg, #1a1038 0%, #130c2e 50%, #0f0b22 100%);
+  border: 1px solid #7c3aed;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.56);
+  color: #f8fafc;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  height: fit-content;
+}
+.aboutRightCard img {
+  width: 70px;
+  padding: 10px;
+}
+.aboutRightCard {
+  width: 94%;
+  display: flex;
+}
+
+.RightSecContent {
+  padding: 10px;
+}
+.RightSecContent .key {
+  margin: 0px 0px 10px 0px;
+  color: #90979f;
+}
+.RightSecContent .value{
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+
+.rightAbout .divider{
+  background-color: #90979f;
+  height: 1px;
+}
+
+
+.statCards{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 40px;
+}
+.statCard{
+  flex: 1;
+  min-width: 220px;
+  background: linear-gradient(180deg, #1a1038 0%, #130c2e 50%, #0f0b22 100%);
+  border: 1px solid #7c3aed;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.06);
+  color: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 25px;
+}
+
+.upperPart{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.statCardImg img{
+    width: 80px;
+    height: 80px;
+    padding: 20px;
+  border-radius: 33%;
+  background-color: rgba(124, 58, 237, 0.15); /* #7c3aed with transparency */
+}
+
+.statUpperText{
+  display: flex;
+  flex-direction: column;
+}
+
+.stat{
+  font-size: 40px;
+  color: #7c3aed;
+  line-height: 1;
+  font-weight: bold;
+}
+
+.statName{
+  font-weight: 400;
+  color: #cbd5e1;
+  margin-top: 5px;
+}
+
+.statCard .divider {
+  width: 100%;
+  height: 1px;
+  background-color: #3b2a65;
+  margin: 20px 0;
+}
+
+.lowerPart{
+  font-weight: 300;
+  color: #cbd5e1;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}

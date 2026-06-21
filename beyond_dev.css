@@ -1,0 +1,210 @@
+#beyond_development{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: #02020c;
+    position: relative;
+    z-index: 20;
+}
+
+.Be_D_text{
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+     gap: 2px;
+
+}
+.Be_D_text div{
+ font-size: 1.8rem;
+ align-items: center;
+ display: flex;
+ justify-content: center;
+ text-align: center;
+
+}
+.Be_D_text div:last-child {
+    padding: 20px;
+}
+
+.Be_D_text p{
+    font-size: 14px;
+    width: 80%;
+        font-weight: 400;
+
+}
+
+.curved-separator {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background: #02020c;
+  border-top-left-radius: 50% 100%;
+  border-top-right-radius: 50% 100%;
+  border-top: 2px solid #7c3aed;
+  box-shadow: 0 -15px 30px rgba(124, 58, 237, 0.4);
+  margin-top: -50px;
+  z-index: 10;
+}
+
+/* Skills Beyond Code List Styles */
+.sideSkills {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 1000px;
+  margin: 40px auto;
+  background: rgba(10, 5, 20, 0.4);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+
+.OtherSkillCard {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+  gap: 20px;
+}
+.OtherSkillCard:last-child {
+  border-bottom: none;
+}
+
+.OtherSkillCardImg {
+  width: 60px;
+  height: 60px;
+  border-radius: 15px;
+  background: rgba(124, 58, 237, 0.05);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  box-shadow: inset 0 0 10px rgba(124, 58, 237, 0.1);
+}
+
+.OtherSkillCardImg img {
+  width: 30px;
+  height: 30px;
+  opacity: 0.9;
+}
+
+.OtherSkillCardText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 250px;
+}
+
+.OSCT_heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.OSCT_body {
+  font-size: 0.85rem;
+  color: #a0a0a0;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.OtherSkillProgress {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+  min-width: 150px;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  position: relative;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, rgba(124, 58, 237, 0.8), #c084fc);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(192, 132, 252, 0.5);
+  position: relative;
+}
+
+.progress-bar-fill::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 12px;
+  width: 12px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #fff, 0 0 20px #c084fc;
+}
+
+.OtherSkillPercent {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #c084fc;
+  width: 50px;
+  text-align: right;
+}
+
+.OtherSkillBadge {
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-left: 20px;
+  width: 135px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.expert {
+  border: 1px solid #c084fc;
+  color: #c084fc;
+  background: rgba(192, 132, 252, 0.05);
+}
+
+.advanced {
+  border: 1px solid #3b82f6;
+  color: #3b82f6;
+  background: rgba(59, 130, 246, 0.05);
+}
+
+.intermediate {
+  border: 1px solid #10b981;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .OtherSkillCard {
+    flex-wrap: wrap;
+    padding: 25px 0;
+  }
+  .OtherSkillProgress {
+    flex-basis: 100%;
+    order: 4;
+    margin: 15px 0 0 0;
+  }
+  .OtherSkillPercent {
+    order: 2;
+    text-align: left;
+    width: auto;
+    margin-left: 10px;
+  }
+  .OtherSkillBadge {
+    order: 3;
+    margin-left: auto;
+  }
+}
