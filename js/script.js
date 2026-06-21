@@ -24,14 +24,7 @@ const targetId = this.getAttribute('href');
 
 console.log(2);
 
-document.querySelectorAll(".nav_link_wrapper").forEach((wrapper) => {
-    wrapper.addEventListener("click", () => {
-       document.querySelectorAll(".underline").forEach((underline) => {
-            underline.style.width = "0%";
-        });
-        wrapper.querySelector(".underline").style.width = "90%";
-    });
-});
+// Removed inline style manipulation so CSS .active class can properly handle underlines.
 
 const words = [
   "Frontend Developer",
@@ -149,7 +142,8 @@ const navLinks = document.querySelectorAll(".nav a");
 const scrollSpyObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        let currentId = entry.target.getAttribute("id");
+        let currentId = entry.target.getAttribute("id") || entry.target.getAttribute("data-nav-id");
+        if (!currentId) return;
         navLinks.forEach(link => {
           link.parentElement.classList.remove("active");
           if (link.getAttribute("href") === `#${currentId}`) {
@@ -158,14 +152,19 @@ const scrollSpyObserver = new IntersectionObserver((entries) => {
         });
       }
     });
-  }, { threshold: 0.3 });
+  }, { rootMargin: "-40% 0px -40% 0px", threshold: 0 });
 
   sections.forEach(section => {
-
-    if(['about', 'skills', 'journey', 'projects'].includes(section.id)) {
+    if(['about', 'skills', 'projects'].includes(section.id)) {
       scrollSpyObserver.observe(section);
     }
   });
+
+  const journeyWrapper = document.querySelector('.journey-wrapper');
+  if (journeyWrapper) {
+    journeyWrapper.setAttribute('data-nav-id', 'journey');
+    scrollSpyObserver.observe(journeyWrapper);
+  }
 
 const previewContainer = document.getElementById('project-preview-image');
 
