@@ -15,6 +15,7 @@
      gap: 2px;
 
 }
+
 .Be_D_text div{
  font-size: 1.8rem;
  align-items: center;
@@ -23,6 +24,7 @@
  text-align: center;
 
 }
+
 .Be_D_text div:last-child {
     padding: 20px;
 }
@@ -47,7 +49,6 @@
   z-index: 10;
 }
 
-/* Skills Beyond Code List Styles */
 .sideSkills {
   display: flex;
   flex-direction: column;
@@ -67,6 +68,7 @@
   border-bottom: 1px solid rgba(124, 58, 237, 0.1);
   gap: 20px;
 }
+
 .OtherSkillCard:last-child {
   border-bottom: none;
 }
@@ -186,24 +188,26 @@
   background: rgba(16, 185, 129, 0.05);
 }
 
-/* Responsive adjustments */
 @media (max-width: 900px) {
   .OtherSkillCard {
     flex-wrap: wrap;
     padding: 25px 0;
   }
-  .OtherSkillProgress {
+
+.OtherSkillProgress {
     flex-basis: 100%;
     order: 4;
     margin: 15px 0 0 0;
   }
-  .OtherSkillPercent {
+
+.OtherSkillPercent {
     order: 2;
     text-align: left;
     width: auto;
     margin-left: 10px;
   }
-  .OtherSkillBadge {
+
+.OtherSkillBadge {
     order: 3;
     margin-left: auto;
   }

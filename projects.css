@@ -131,16 +131,20 @@
   .mp-title {
     font-size: 1.8rem;
   }
-  .minimal-project {
+
+.minimal-project {
     padding: 20px 10px;
   }
-  .minimal-project:hover {
+
+.minimal-project:hover {
     padding-left: 20px;
   }
-  #project-preview-image {
-    display: none !important; /* Hide floating image on mobile */
+
+#project-preview-image {
+    display: none !important; 
   }
-  .mp-arrow {
+
+.mp-arrow {
     font-size: 1.5rem;
   }
 }

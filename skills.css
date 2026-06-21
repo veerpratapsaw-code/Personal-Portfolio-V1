@@ -30,6 +30,7 @@
   justify-content: center;
   padding: 10px;
 }
+
 .SkillTitle {
   width: 100%;
   display: flex;
@@ -43,6 +44,7 @@
   justify-content: center;
   padding: 15px;
 }
+
 .skillBody p {
   font-weight: 400;
   letter-spacing: normal;
@@ -88,6 +90,7 @@
   justify-content: space-around;
   padding: 30px;
 }
+
 .skillHeading {
   display: flex;
   font-size: 30px;
@@ -127,18 +130,21 @@
   padding: 50%;
   animation: rotateOrbit 30s linear infinite;
 }
+
 @keyframes rotateOrbit {
   from {
     transform: rotate(0deg);
   }
 
-  to {
+to {
     transform: rotate(360deg);
   }
 }
+
 .center-logo img {
   width: 80px;
 }
+
 .icon {
   position: absolute;
   width: 60px;
@@ -156,6 +162,7 @@
 .icon1 {
   animation: rotateIcon1 30s linear infinite;
 }
+
 @keyframes rotateIcon1 {
   0% {
     transform: rotate(0deg) translate(220px) rotate(0deg);
@@ -168,6 +175,7 @@
 .icon2 {
   animation: rotateIcon2 30s linear infinite;
 }
+
 @keyframes rotateIcon2 {
   0% {
     transform: rotate(36deg) translate(220px) rotate(-36deg);
@@ -180,6 +188,7 @@
 .icon3 {
   animation: rotateIcon3 30s linear infinite;
 }
+
 @keyframes rotateIcon3 {
   0% {
     transform: rotate(72deg) translate(220px) rotate(-72deg);
@@ -192,6 +201,7 @@
 .icon4 {
   animation: rotateIcon4 30s linear infinite;
 }
+
 @keyframes rotateIcon4 {
   0% {
     transform: rotate(108deg) translate(220px) rotate(-108deg);
@@ -204,6 +214,7 @@
 .icon5 {
   animation: rotateIcon5 30s linear infinite;
 }
+
 @keyframes rotateIcon5 {
   0% {
     transform: rotate(144deg) translate(220px) rotate(-144deg);
@@ -216,6 +227,7 @@
 .icon6 {
   animation: rotateIcon6 30s linear infinite;
 }
+
 @keyframes rotateIcon6 {
   0% {
     transform: rotate(180deg) translate(220px) rotate(-180deg);
@@ -228,6 +240,7 @@
 .icon7 {
   animation: rotateIcon7 30s linear infinite;
 }
+
 @keyframes rotateIcon7 {
   0% {
     transform: rotate(216deg) translate(220px) rotate(-216deg);
@@ -240,6 +253,7 @@
 .icon8 {
   animation: rotateIcon8 30s linear infinite;
 }
+
 @keyframes rotateIcon8 {
   0% {
     transform: rotate(252deg) translate(220px) rotate(-252deg);
@@ -252,6 +266,7 @@
 .icon9 {
   animation: rotateIcon9 30s linear infinite;
 }
+
 @keyframes rotateIcon9 {
   0% {
     transform: rotate(288deg) translate(220px) rotate(-288deg);
@@ -264,6 +279,7 @@
 .icon10 {
   animation: rotateIcon10 30s linear infinite;
 }
+
 @keyframes rotateIcon10 {
   0% {
     transform: rotate(324deg) translate(220px) rotate(-324deg);
@@ -303,17 +319,20 @@
   max-width: 45%;
   flex-direction: column;
 }
+
 .techStackHeading {
   display: flex;
   font-size: 80px;
   justify-content: end;
 }
+
 .techStackLabel {
   font-size: 24px;
   letter-spacing: -0.03rem;
   position: relative;
   bottom: -40px;
 }
+
 .techStackBody {
   font-weight: 400;
   font-family: "Inter", sans-serif;
