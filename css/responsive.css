@@ -1,0 +1,293 @@
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  z-index: 100;
+  background: transparent;
+  border: none;
+  padding: 10px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.hamburger svg {
+  width: 30px;
+  height: 30px;
+  stroke: #fff;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active svg {
+  stroke: #7c3aed;
+  transform: rotate(90deg);
+}
+
+@media (max-width: 1400px) {
+  .techStack {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 90px 10px;
+    gap: 40px;
+  }
+  .techStackText {
+    max-width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+      .techStackBody {
+    border-right: none;
+    border-top: 4px solid #7c3aed;
+    border-radius: 0 0 20px 20px;
+    text-align: center;
+    width: 70%;
+  }
+  .sec2Cards {
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px;
+    gap: 40px;
+    padding: 5vw;
+  }
+
+  .skillCard {
+    width: 45%;
+  }
+
+}
+
+@media (max-width: 1050px) {
+  /* Global Nav / Header */
+  .hamburger {
+    display: block;
+  }
+
+  .side {
+    display: none;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    left: auto;
+    width: 70%;
+    height: 100vh;
+    background: rgba(2, 2, 12, 0.97);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    transition: right 0.4s ease-in-out;
+    z-index: 90;
+    border-left: 1px solid rgba(124, 58, 237, 0.3);
+    padding: 0;
+    transform: none;
+  }
+
+  .nav.active {
+    right: 0;
+  }
+
+  .stickyNav .hamburger {
+    position: fixed;
+    right: 20px;
+    top: 12px;
+  }
+
+  .nav_link_wrapper a {
+    font-size: 1.5rem;
+  }
+
+  /* Hero Section - Fix overflow */
+  .outerBG1 {
+    overflow: hidden;
+  }
+
+  .hero {
+    flex-direction: column;
+    margin: 0 10px;
+    overflow: hidden;
+  }
+
+  .left {
+    width: 100%;
+  }
+
+  .right {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .right img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .topLeft_text .text {
+    font-size: 30px;
+  }
+
+  .linksHero {
+    justify-content: flex-start;
+    margin: 30px 0;
+  }
+
+  .buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .extra {
+    margin: 8px 0 7px 0;
+  }
+  .curved-separator {
+margin-top: 30px;
+  }
+
+  /* About Section - Fix image bleed */
+  .About {
+    flex-direction: column;
+    margin: 0 10px;
+    padding: 50px 15px;
+    position: relative;
+    z-index: 5;
+  }
+
+  .statsContainer {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .rightAbout {
+    width: 100%;
+    margin-top: 30px;
+    padding: 20px 10px;
+    overflow: hidden;
+  }
+
+  .aboutRightCard img {
+    width: 50px;
+    padding: 5px;
+  }
+
+  /* Skills Section */
+  .sec2Cards {
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px;
+    gap: 40px;
+    padding: 5vw;
+  }
+
+  .skillCard {
+    width: 45%;
+  }
+
+  .techStack {
+    flex-direction: column-reverse  
+    ;
+    align-items: center;
+    padding: 40px 10px;
+    gap: 40px;
+  }
+
+  .techStackText {
+    max-width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .techStackBody {
+    border-right: none;
+    border-top: 4px solid #7c3aed;
+    border-radius: 0 0 20px 20px;
+    text-align: center;
+    width: 70%;
+  }
+
+  .orbit-container {
+    transform: scale(0.6);
+    margin: -100px 0;
+  }
+
+  /* Journey Section */
+  .journey-track {
+    gap: 10vw;
+  }
+
+  .milestone {
+    width: 300px;
+    padding: 25px;
+  }
+
+  .milestone-title {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Smaller Phones */
+  .nav {
+    width: 100%;
+    border-left: none;
+  }
+
+  .hero {
+    margin: 0 5px;
+  }
+
+
+
+  .topLeft_text .text {
+    font-size: 24px;
+  }
+
+  .sec2text h1 {
+    font-size: 35px;
+  }
+
+  .statCards {
+    flex-direction: column;
+  }
+
+  .statCard {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .skillCard {
+    width: 100%;
+  }
+
+  .orbit-container {
+    transform: scale(0.45);
+    margin: -120px 0;
+  }
+
+  .techStackHeading {
+    font-size: 50px;
+    justify-content: center;
+  }
+
+  .milestone {
+    width: 260px;
+    padding: 20px;
+  }
+
+  .projectsHeading h1 {
+    font-size: 2.5rem;
+  }
+}

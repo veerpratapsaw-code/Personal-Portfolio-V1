@@ -49,15 +49,15 @@ document.querySelectorAll(".linkLogo img").forEach((img) => {
 
 function stickyNav() {
     let nav = document.querySelector(".nav");
+    let header = document.querySelector(".header");
 
-let scrollValue = window.scrollY;
-
-let headerHeight = document.querySelector(".hero").offsetHeight / 2;
+    let scrollValue = window.scrollY;
+    let headerHeight = document.querySelector(".hero").offsetHeight / 2;
 
     if (scrollValue > headerHeight) {
-        nav.classList.add("stickyNav");
+        header.classList.add("stickyNav");
     } else {
-        nav.classList.remove("stickyNav");
+        header.classList.remove("stickyNav");
     }
 }
 
@@ -122,7 +122,7 @@ const observer = new IntersectionObserver((entries) => {
     });
   }, observerOptions);
 
-const animatedElements = document.querySelectorAll('.minimal-project, .OtherSkillCard, .techStack img, .skillHeading, #about p, .Be_D_text');
+const animatedElements = document.querySelectorAll('.minimal-project, .OtherSkillCard, .techStack img, .skillHeading, #about p, .Be_D_text, .info-card, .contact-header, .quote-container');
 
   animatedElements.forEach((el, index) => {
 
@@ -155,7 +155,7 @@ const scrollSpyObserver = new IntersectionObserver((entries) => {
   }, { rootMargin: "-40% 0px -40% 0px", threshold: 0 });
 
   sections.forEach(section => {
-    if(['about', 'skills', 'projects'].includes(section.id)) {
+    if(['about', 'skills', 'projects', 'contact'].includes(section.id)) {
       scrollSpyObserver.observe(section);
     }
   });
@@ -195,6 +195,70 @@ window.addEventListener('mousemove', function(e) {
         previewContainer.style.left = e.clientX + 'px';
         previewContainer.style.top = e.clientY + 'px';
       }
+    });
+  }
+
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('.submit-btn');
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '<span>Sending...</span>';
+      btn.style.opacity = '0.8';
+      btn.style.pointerEvents = 'none';
+
+      const formData = new FormData(this);
+      formData.append("access_key", "8dd3181e-267a-4700-bde2-e74ec1582626");
+
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          btn.innerHTML = '<span>Sent Successfully!</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+          btn.style.background = '#10b981'; // Green for success
+          this.reset();
+        } else {
+          console.error(data);
+          btn.innerHTML = '<span>Error! Try Again.</span>';
+          btn.style.background = '#ea1818ff'; // Red for error
+        }
+      } catch (error) {
+        console.error(error);
+        btn.innerHTML = '<span>Error! Try Again.</span>';
+        btn.style.background = '#ea1818ff'; // Red for error
+      }
+
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.style.opacity = '1';
+        btn.style.pointerEvents = 'auto';
+        btn.style.background = '#a855f7';
+      }, 3000);
+    });
+  }
+
+  // Hamburger Menu Logic
+  const hamburger = document.getElementById('hamburgerMenu');
+  const nav = document.querySelector('.nav');
+  const navLinksList = document.querySelectorAll('.nav_link_wrapper a');
+
+  if (hamburger) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      nav.classList.toggle('active');
+    });
+
+    navLinksList.forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        nav.classList.remove('active');
+      });
     });
   }
 });

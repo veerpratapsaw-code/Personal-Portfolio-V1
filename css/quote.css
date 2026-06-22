@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap');
+
+.quote-section {
+  padding: 100px 10vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+}
+
+.quote-container {
+  max-width: 900px;
+  position: relative;
+  padding: 40px;
+}
+
+.quote-text {
+  font-family: 'Chelsea Market', cursive;
+  font-size: 3.5rem;
+  color: #fff;
+  line-height: 1.4;
+  margin-bottom: 30px;
+  position: relative;
+  font-weight: normal;
+}
+
+.quote-text::before {
+  content: '"';
+  font-size: 8rem;
+  color: rgba(168, 85, 247, 0.2); /* Purple */
+  position: absolute;
+  top: -60px;
+  left: -50px;
+  font-family: serif;
+  line-height: 1;
+}
+
+.quote-text::after {
+  content: '"';
+  font-size: 8rem;
+  color: rgba(168, 85, 247, 0.2); /* Purple */
+  position: absolute;
+  bottom: -90px;
+  right: -30px;
+  font-family: serif;
+  line-height: 1;
+}
+
+.quote-author {
+  font-size: 1.2rem;
+  color: #a855f7;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-family: 'Inter', sans-serif; /* Fallback to standard sleek font for author */
+}
+
+@media (max-width: 900px) {
+  .quote-text {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .quote-text {
+    font-size: 2rem;
+  }
+  .quote-text::before {
+    top: -40px;
+    left: -20px;
+    font-size: 5rem;
+  }
+  .quote-text::after {
+    bottom: -60px;
+    right: -10px;
+    font-size: 5rem;
+  }
+  .quote-section {
+    padding: 60px 5vw;
+  }
+}
