@@ -1,6 +1,6 @@
 :root {
-  --primary: #7c3aed;
-  --bg-dark: #02020c;
+  --primary: var(--primary);
+  --bg-dark: var(--bg-main);
   --primary-rgb: 124, 58, 237;
 }
 
@@ -19,8 +19,8 @@
 }
 
 body {
-  background-color: var(--bg-dark);
-  color: aliceblue;
+  background-color: var(--bg-main);
+  color: var(--text-main);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -34,12 +34,12 @@ img {
 
 /* Text Selection Highlight */
 ::selection {
-  background-color: #7c3aed;
-  color: #ffffff;
+  background-color: var(--primary);
+  color: var(--text-main);
 }
 ::-moz-selection {
-  background-color: #7c3aed;
-  color: #ffffff;
+  background-color: var(--primary);
+  color: var(--text-main);
 }
 
 /* Custom Scrollbar */
@@ -54,7 +54,7 @@ img {
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #6d28d9;
+  background: var(--secondary);
 }
 
 /* Cursors */
@@ -84,7 +84,7 @@ nav {
 }
 
 nav a {
-  color: #fafaf9;
+  color: var(--text-main);
   text-decoration: none;
   font-weight: 500;
 }
@@ -93,11 +93,11 @@ nav a {
   position: fixed;
   top: 0;
   left: 0;
-  background: #00000070;
+  background: var(--bg-nav);
   z-index: 30;
   padding: 12px;
   transition: 0.4s all ease-in-out;
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(10px);
   justify-content: center;
   width: 100%;
 }
@@ -122,7 +122,7 @@ nav a {
 
 .underline {
   width: 0%;
-  background-color: #7554d7;
+  background-color: var(--primary);
   height: 2px;
   transition: 0.3s all ease-in-out;
 }
@@ -181,13 +181,13 @@ nav a {
 }
 
 .outerBG1 {
-  background: linear-gradient(var(--bg-dark), #11003e);
+  background: linear-gradient(var(--bg-dark), var(--bg-tertiary));
   padding: 40px 0;
   overflow: hidden;
 }
 
 .sideLine {
-  background: linear-gradient(#7250d2, var(--bg-dark));
+  background: linear-gradient(var(--primary), var(--bg-dark));
   width: 2px;
   margin: 15px;
   transition: 0.6s all;
@@ -197,7 +197,7 @@ nav a {
 }
 
 .circleOfLine {
-  background-color: #7250d2;
+  background-color: var(--primary);
   min-width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -256,7 +256,7 @@ nav a {
   border-radius: 999px;
   padding: 10px 15px;
   width: fit-content;
-  color: #c4adeb;
+  color: var(--accent-light);
 }
 
 .buttons button {
@@ -287,4 +287,6 @@ nav a {
   opacity: 1;
   transform: translateY(0);
 }
+
+
 

@@ -373,11 +373,11 @@ if (showQrBtn) {
         text: window.location.href, // QR Code text
         width: 200,
         height: 200,
-        logo: "assets/images/favicon.webp", // User's logo
+        logo: "assets/images/logomeWhite.png", // User's logo
         logoWidth: 50,
         logoHeight: 50,
-        logoBackgroundColor: '#ffffff',
-        logoBackgroundTransparent: false
+        logoBackgroundColor: 'transparent',
+        logoBackgroundTransparent: true
       });
       qrGenerated = true;
     }
@@ -397,4 +397,42 @@ if (qrModal) {
       qrModal.classList.remove('active');
     }
   });
+}
+
+// Theme Toggle Logic
+const themeToggle = document.getElementById('theme-toggle');
+const moonIcons = document.querySelectorAll('.moon-icon');
+const sunIcons = document.querySelectorAll('.sun-icon');
+
+// Check saved theme or system preference
+const savedTheme = localStorage.getItem('theme');
+const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+
+if (savedTheme === 'light' || (!savedTheme && systemPrefersLight)) {
+  document.documentElement.setAttribute('data-theme', 'light');
+  toggleIcons('light');
+}
+
+themeToggle.addEventListener('click', () => {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+  
+  if (newTheme === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+  } else {
+    document.documentElement.removeAttribute('data-theme');
+  }
+  
+  localStorage.setItem('theme', newTheme);
+  toggleIcons(newTheme);
+});
+
+function toggleIcons(theme) {
+  if (theme === 'light') {
+    moonIcons.forEach(icon => icon.style.display = 'none');
+    sunIcons.forEach(icon => icon.style.display = 'block');
+  } else {
+    moonIcons.forEach(icon => icon.style.display = 'block');
+    sunIcons.forEach(icon => icon.style.display = 'none');
+  }
 }

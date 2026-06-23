@@ -22,7 +22,7 @@
 
 .projectsHeading h1 {
   font-size: 4rem;
-  color: #fff;
+  color: var(--text-main);
   margin: 0;
 }
 
@@ -38,7 +38,7 @@
   align-items: center;
   padding: 40px 20px;
   text-decoration: none;
-  color: #fff;
+  color: var(--text-main);
   transition: all 0.3s ease;
   position: relative;
   z-index: 2;
@@ -51,12 +51,12 @@
 }
 
 .minimal-project:hover .mp-title {
-  color: #c084fc;
+  color: var(--accent-light);
 }
 
 .minimal-project:hover .mp-arrow {
   transform: translate(10px, -10px);
-  color: #c084fc;
+  color: var(--accent-light);
 }
 
 .mp-content {
@@ -75,7 +75,7 @@
 
 .mp-tags {
   font-size: 1rem;
-  color: #a0a0a0;
+  color: var(--text-muted);
   font-family: 'Inter', sans-serif;
   letter-spacing: 1px;
 }
@@ -117,7 +117,7 @@
 .minimal-projects-list .divider {
   width: 100%;
   height: 1px;
-  background: rgba(255,255,255,0.1);
+  background: var(--border-light);
   margin: 0;
 }
 
@@ -148,3 +148,5 @@
     font-size: 1.5rem;
   }
 }
+
+

@@ -1,7 +1,7 @@
 .journey-section {
   position: relative;
   background: var(--bg-dark); /* Match portfolio dark theme */
-  color: #fff;
+  color: var(--text-main);
 }
 
 .journey-wrapper {
@@ -31,7 +31,7 @@
 
 .milestone {
   width: 380px;
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--bg-card);
   border: 1px solid rgba(var(--primary-rgb), 0.2);
   padding: 40px;
   border-radius: 20px;
@@ -79,13 +79,13 @@
 }
 
 .milestone-title {
-  color: #fafaf9;
+  color: var(--text-main);
   font-size: 1.8rem;
   font-weight: 700;
 }
 
 .milestone-desc {
-  color: #94a3b8;
+  color: var(--text-muted);
   line-height: 1.7;
   font-size: 1.05rem;
 }
@@ -136,3 +136,5 @@
   pointer-events: none;
   will-change: transform;
 }
+
+

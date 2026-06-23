@@ -1,0 +1,89 @@
+/* Theme Variables - Dark Mode (Default) */
+:root {
+  /* Backgrounds */
+  --bg-main: #02020c;
+  --bg-secondary: #0f0b22;
+  --bg-tertiary: #11003e;
+  --bg-nav: rgba(2, 2, 12, 0.8);
+  --bg-card: rgba(255, 255, 255, 0.02);
+  
+  /* Text Colors */
+  --text-main: #ffffff;
+  --text-muted: #cbd5e1;
+  
+  /* Accents */
+  --primary: #7c3aed;
+  --secondary: #a855f7;
+  --accent-light: #c084fc;
+  
+  /* Borders & Dividers */
+  --border-light: rgba(255, 255, 255, 0.1);
+  --border-medium: rgba(255, 255, 255, 0.2);
+}
+
+/* Theme Variables - Light Mode */
+[data-theme="light"] {
+  /* Backgrounds */
+  --bg-main: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-tertiary: #e2e8f0;
+  --bg-nav: rgba(248, 250, 252, 0.9);
+  --bg-card: #ffffff;
+  
+  /* Text Colors */
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  
+  /* Accents */
+  --primary: #6d28d9;
+  --secondary: #9333ea;
+  --accent-light: #a855f7;
+  
+  /* Borders & Dividers */
+  --border-light: rgba(0, 0, 0, 0.1);
+  --border-medium: rgba(0, 0, 0, 0.2);
+}
+
+/* Light mode specific element fixes */
+[data-theme="light"] .minimal-projects-list .divider,
+[data-theme="light"] .aboutRightCard .divider,
+[data-theme="light"] .input-line {
+  background: var(--border-light);
+}
+
+/* Invert white SVG icons in light mode */
+[data-theme="light"] img[data-src*="white.svg"],
+[data-theme="light"] img[src*="white.svg"],
+[data-theme="light"] .social-links img,
+[data-theme="light"] .info-icon img,
+[data-theme="light"] .aboutRightCard img {
+  filter: invert(1) brightness(0.2);
+}
+
+/* Ensure purple SVGs stay purple and don't invert unless needed, but wait, if it's white it inverts to black. */
+
+/* Theme Toggle Button Styles */
+.theme-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  color: var(--text-main);
+  transition: all 0.3s ease;
+  margin-left: 20px;
+}
+
+.theme-toggle:hover {
+  background: var(--border-light);
+}
+
+.theme-toggle svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+

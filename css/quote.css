@@ -18,7 +18,7 @@
 .quote-text {
   font-family: 'Chelsea Market', cursive;
   font-size: 3.5rem;
-  color: #fff;
+  color: var(--text-main);
   line-height: 1.4;
   margin-bottom: 30px;
   position: relative;
@@ -49,7 +49,7 @@
 
 .quote-author {
   font-size: 1.2rem;
-  color: #a855f7;
+  color: var(--secondary);
   font-weight: 600;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -80,3 +80,5 @@
     padding: 60px 5vw;
   }
 }
+
+

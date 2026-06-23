@@ -42,22 +42,22 @@
 .context-menu-item svg {
   width: 18px;
   height: 18px;
-  stroke: #94a3b8;
+  stroke: var(--text-muted);
   transition: stroke 0.2s;
 }
 
 .context-menu-item:hover {
   background: rgba(var(--primary-rgb), 0.2);
-  color: #fff;
+  color: var(--text-main);
 }
 
 .context-menu-item:hover svg {
-  stroke: #fff;
+  stroke: var(--text-main);
 }
 
 .context-menu-divider {
   height: 1px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--border-light);
   margin: 6px 0;
 }
 
@@ -104,7 +104,7 @@
   right: 20px;
   font-size: 28px;
   cursor: pointer;
-  color: #fff;
+  color: var(--text-main);
   line-height: 1;
 }
 .modal-close:hover {
@@ -119,3 +119,5 @@
   border-radius: 12px;
   display: inline-block;
 }
+
+

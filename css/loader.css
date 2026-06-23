@@ -5,7 +5,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #02020c;
+  background: var(--bg-main);
   z-index: 99999;
   display: flex;
   justify-content: center;
@@ -21,7 +21,7 @@
 }
 
 .loader-text {
-  color: #fff;
+  color: var(--text-main);
   font-size: 2rem;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
@@ -31,7 +31,7 @@
 .loader-bar {
   width: 200px;
   height: 4px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--border-light);
   border-radius: 4px;
   position: relative;
   overflow: hidden;
@@ -44,7 +44,7 @@
   left: -50%;
   width: 50%;
   height: 100%;
-  background: #7c3aed; /* Theme purple */
+  background: var(--primary); /* Theme purple */
   border-radius: 4px;
   animation: loading 1.5s infinite ease-in-out;
 }
@@ -62,3 +62,5 @@
 body.no-scroll {
   overflow: hidden;
 }
+
+

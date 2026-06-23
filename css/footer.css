@@ -2,7 +2,7 @@
 .footer {
   background: var(--bg-dark);
   padding: 40px 10vw 20px;
-  color: #a0a0a0;
+  color: var(--text-muted);
   font-family: 'Inter', sans-serif;
   text-align: center;
   position: relative;
@@ -30,7 +30,7 @@
 }
 
 .footer-logo span {
-  color: #fff;
+  color: var(--text-main);
   font-size: 1.2rem;
   font-weight: 700;
   letter-spacing: 1px;
@@ -42,7 +42,7 @@
 }
 
 .footer-links a {
-  color: #a0a0a0;
+  color: var(--text-muted);
   text-decoration: none;
   transition: color 0.3s ease;
   font-size: 0.95rem;
@@ -53,7 +53,7 @@
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--border-light);
   padding-top: 20px;
   font-size: 0.85rem;
   display: flex;
@@ -82,3 +82,5 @@
     gap: 15px;
   }
 }
+
+

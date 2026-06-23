@@ -3,11 +3,11 @@
 }
 .skillCard {
   width: 18%;
-  background: linear-gradient(180deg, #1a1038 0%, #130c2e 50%, #0f0b22 100%);
+  background: linear-gradient(180deg, var(--bg-tertiary) 0%, var(--bg-tertiary) 50%, var(--bg-secondary) 100%);
   border: 1px solid var(--primary);
   border-radius: 20px;
   box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.15);
-  color: #f8fafc;
+  color: var(--text-main);
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -336,7 +336,7 @@ to {
   font-family: "Inter", sans-serif;
   font-size: 18px;
   line-height: 1.8;
-  color: #cbd5e1;
+  color: var(--text-muted);
   background: linear-gradient(
     90deg,
     rgba(var(--primary-rgb), 0.03) 0%,
@@ -357,3 +357,5 @@ to {
 .techStackBody p:last-child {
   margin-bottom: 0;
 }
+
+
