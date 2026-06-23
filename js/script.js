@@ -283,6 +283,20 @@ window.addEventListener('load', async () => {
       tempImage.src = img.getAttribute('data-src');
     });
   }
+
+  // Hide preloader after images are loaded, with a 1-second minimum delay
+  setTimeout(() => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+      preloader.classList.add('preloader-hidden');
+      document.body.classList.remove('no-scroll');
+      
+      // Optionally remove from DOM after transition
+      setTimeout(() => {
+        preloader.style.display = 'none';
+      }, 500);
+    }
+  }, 1000);
 });
 
 // Custom Context Menu Logic
