@@ -42,7 +42,7 @@
 .context-menu-item svg {
   width: 18px;
   height: 18px;
-  stroke: #cbd5e1;
+  stroke: #94a3b8;
   transition: stroke 0.2s;
 }
 
@@ -119,5 +119,3 @@
   border-radius: 12px;
   display: inline-block;
 }
-
-

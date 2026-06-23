@@ -255,7 +255,7 @@ margin-top: 30px;
     font-size: 24px;
   }
 
-  .sec2text h2 {
+  .sec2text h1 {
     font-size: 35px;
   }
 
@@ -291,9 +291,7 @@ margin-top: 30px;
     padding: 20px;
   }
 
-  .projectsHeading h2 {
+  .projectsHeading h1 {
     font-size: 2.5rem;
   }
 }
-
-

@@ -25,7 +25,7 @@
   justify-content: center;
 }
 
-.sec2text h2 {
+.sec2text h1 {
   margin-bottom: 0.5rem;
   font-size: 50px;
 }
@@ -149,5 +149,3 @@
   line-height: 1.5;
   font-size: 0.95rem;
 }
-
-

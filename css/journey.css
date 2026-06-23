@@ -85,7 +85,7 @@
 }
 
 .milestone-desc {
-  color: #cbd5e1;
+  color: #94a3b8;
   line-height: 1.7;
   font-size: 1.05rem;
 }
@@ -136,5 +136,3 @@
   pointer-events: none;
   will-change: transform;
 }
-
-

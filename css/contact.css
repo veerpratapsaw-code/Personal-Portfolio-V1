@@ -24,7 +24,7 @@
   gap: 15px;
 }
 
-.contact-header .eyebrow {
+.contact-header h5 {
   color: #a855f7;
   font-size: 1.2rem;
   font-weight: 600;
@@ -32,13 +32,13 @@
   text-transform: uppercase;
 }
 
-.contact-header h2 {
+.contact-header h1 {
   font-size: 4rem;
   font-weight: 700;
 }
 
 .contact-header p {
-  color: #cbd5e1;
+  color: #a0a0a0;
   max-width: 600px;
   font-size: 1.1rem;
   line-height: 1.6;
@@ -99,7 +99,7 @@
 }
 
 .info-text p {
-  color: #cbd5e1;
+  color: #a0a0a0;
   font-size: 1rem;
 }
 
@@ -195,7 +195,7 @@
   position: absolute;
   top: 10px;
   left: 0;
-  color: #cbd5e1;
+  color: #a0a0a0;
   font-size: 1rem;
   pointer-events: none;
   transition: all 0.3s ease;
@@ -281,7 +281,7 @@
 }
 
 @media (max-width: 600px) {
-  .contact-header h2 {
+  .contact-header h1 {
     font-size: 3rem;
   }
   .contact-form-wrapper {
@@ -291,5 +291,3 @@
     padding: 80px 5vw;
   }
 }
-
-

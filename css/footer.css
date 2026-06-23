@@ -2,7 +2,7 @@
 .footer {
   background: var(--bg-dark);
   padding: 40px 10vw 20px;
-  color: #cbd5e1;
+  color: #a0a0a0;
   font-family: 'Inter', sans-serif;
   text-align: center;
   position: relative;
@@ -42,7 +42,7 @@
 }
 
 .footer-links a {
-  color: #cbd5e1;
+  color: #a0a0a0;
   text-decoration: none;
   transition: color 0.3s ease;
   font-size: 0.95rem;
@@ -82,5 +82,3 @@
     gap: 15px;
   }
 }
-
-
