@@ -270,7 +270,11 @@ margin-top: 30px;
 
   .skillCard {
     width: 100%;
-  }
+}
+  .techStackBody {
+    width: 100%;
+}
+
 
   .orbit-container {
     transform: scale(0.45);
