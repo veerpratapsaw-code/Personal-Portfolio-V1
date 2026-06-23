@@ -5,6 +5,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/images/SpaceX landing Page clone.webp">
+  <link rel="preload" as="image" href="assets/images/Netflix-clone.webp">
+  <link rel="preload" as="image" href="assets/images/Spotify clone.webp">
+  <link rel="preload" as="image" href="assets/images/portfolio_v1.webp">
   <link rel="stylesheet" href="css/hero.css" />
   <link rel="stylesheet" href="css/about.css" />
   <link rel="stylesheet" href="css/skills.css" />
@@ -15,16 +22,17 @@
   <link rel="stylesheet" href="css/quote.css" />
   <link rel="stylesheet" href="css/footer.css" />
   <link rel="stylesheet" href="css/responsive.css" />
-  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+  <link rel="stylesheet" href="css/contextmenu.css" />
+  <link rel="icon" type="image/png" href="assets/images/favicon.webp" />
 </head>
 
 <body>
   <header class="header">
     <div class="top_logo">
-      <img src="assets/images/logo L.jpg" alt="" />
+      <img src="assets/images/logo L.webp" alt="" />
     </div>
 
-    <button class="hamburger" id="hamburgerMenu">
+    <button class="hamburger" id="hamburgerMenu" aria-label="Toggle Navigation Menu">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <line x1="3" y1="12" x2="21" y2="12" class="mid"></line>
         <line x1="3" y1="6" x2="21" y2="6" class="top"></line>
@@ -87,16 +95,16 @@
         </div>
 
         <div class="linksHero">
-          <a class="linkLogo" href="https://github.com/veerpratapsaw-code" target="_blank"><img
+          <a class="linkLogo" href="https://github.com/veerpratapsaw-code" target="_blank" aria-label="GitHub Profile"><img
               src="assets/SVG/github white.svg" alt="" /></a>
-          <a class="linkLogo" href="https://www.youtube.com/@VeerPratapSaw" target="_blank"><img
+          <a class="linkLogo" href="https://www.youtube.com/@VeerPratapSaw" target="_blank" aria-label="YouTube Channel"><img
               data-src="assets/SVG/youtube white.svg " alt="" /></a>
           <a class="linkLogo" href="https://wa.me/919876543210?text=Hi%20Veer,%20I%20visited%20your%20portfolio."
-            target="_blank"><img data-src="assets/SVG/whatsapp white.svg" alt="" /></a>
-          <a class="linkLogo" href="https://t.me/VeerPratapSaw" target="_blank"><img
+            target="_blank" aria-label="WhatsApp"><img data-src="assets/SVG/whatsapp white.svg" alt="" /></a>
+          <a class="linkLogo" href="https://t.me/VeerPratapSaw" target="_blank" aria-label="Telegram"><img
               data-src="assets/SVG/telegram white.svg " alt="" /></a>
           <a class="linkLogo" href="https://mail.google.com/mail/?view=cm&fs=1&to=veerpratapsaw@gmail.com"
-            target="_blank"><img data-src="assets/SVG/email white.svg " alt="" /></a>
+            target="_blank" aria-label="Email Me"><img data-src="assets/SVG/email white.svg " alt="" /></a>
         </div>
       </section>
 
@@ -406,7 +414,7 @@
     <section class="techStack">
       <div class="orbit-container">
         <div class="center-logo">
-          <img data-src="assets/images/logoMe.png" />
+          <img data-src="assets/images/logoMe.webp" />
         </div>
 
         <div class="orbit">
@@ -771,7 +779,7 @@
     <div class="minimal-projects-list">
       <div class="divider"></div>
       <a href="https://veer-space-x.vercel.app/" target="_blank" class="minimal-project"
-        data-image="assets/images/SpaceX landing Page clone.png">
+        data-image="assets/images/SpaceX landing Page clone.webp">
         <div class="mp-content">
           <h2 class="mp-title">SpaceX Landing Page</h2>
           <span class="mp-tags">Web / Clone / Responsive</span>
@@ -782,7 +790,7 @@
       <div class="divider"></div>
 
       <a href="https://veer-auraplay.vercel.app/" target="_blank" class="minimal-project"
-        data-image="assets/images/Netflix-clone.png">
+        data-image="assets/images/Netflix-clone.webp">
         <div class="mp-content">
           <h2 class="mp-title">AuraPlay (Netflix Clone)</h2>
           <span class="mp-tags">Web / Streaming UI</span>
@@ -793,7 +801,7 @@
       <div class="divider"></div>
 
       <a href="https://veer-spotify.vercel.app/" target="_blank" class="minimal-project"
-        data-image="assets/images/Spotify clone.png">
+        data-image="assets/images/Spotify clone.webp">
         <div class="mp-content">
           <h2 class="mp-title">Spotify Clone</h2>
           <span class="mp-tags">Web / Music Player UI / Functionable / Ad free</span>
@@ -804,7 +812,7 @@
       <div class="divider"></div>
 
       <a href="https://veerpratapsaw.vercel.app/" target="_blank" class="minimal-project"
-        data-image="assets/images/portfolio_v1.png">
+        data-image="assets/images/portfolio_v1.webp">
         <div class="mp-content">
           <h2 class="mp-title">Personal Portfolio V1</h2>
           <span class="mp-tags">Web / UI / Showcase</span>
@@ -853,10 +861,10 @@
           <div class="info-social">
             <h3>Follow Me</h3>
             <div class="social-links">
-               <a href="https://github.com/veerpratapsaw-code" target="_blank"><img data-src="assets/SVG/github white.svg" alt="" /></a>
-               <a href="https://www.youtube.com/@VeerPratapSaw" target="_blank"><img data-src="assets/SVG/youtube white.svg " alt="" /></a>
-               <a href="https://wa.me/919876543210" target="_blank"><img data-src="assets/SVG/whatsapp white.svg" alt="" /></a>
-               <a href="https://t.me/VeerPratapSaw" target="_blank"><img data-src="assets/SVG/telegram white.svg " alt="" /></a>
+               <a href="https://github.com/veerpratapsaw-code" target="_blank" aria-label="GitHub Profile"><img data-src="assets/SVG/github white.svg" alt="" /></a>
+               <a href="https://www.youtube.com/@VeerPratapSaw" target="_blank" aria-label="YouTube Channel"><img data-src="assets/SVG/youtube white.svg " alt="" /></a>
+               <a href="https://wa.me/919876543210" target="_blank" aria-label="WhatsApp"><img data-src="assets/SVG/whatsapp white.svg" alt="" /></a>
+               <a href="https://t.me/VeerPratapSaw" target="_blank" aria-label="Telegram"><img data-src="assets/SVG/telegram white.svg " alt="" /></a>
             </div>
           </div>
         </div>
@@ -907,6 +915,41 @@
     </div>
   </footer>
 
+  <!-- Custom Context Menu -->
+  <div id="custom-context-menu" class="custom-context-menu">
+    <a href="#about" class="context-menu-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+      <span>About Me</span>
+    </a>
+    <a href="#contact" class="context-menu-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+      <span>Get in Touch</span>
+    </a>
+    <div class="context-menu-divider"></div>
+    <a href="https://github.com" target="_blank" class="context-menu-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+      <span>View Source Code</span>
+    </a>
+    <a href="#" class="context-menu-item" id="share-portfolio">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+      <span>Share Portfolio</span>
+    </a>
+    <a href="#" class="context-menu-item" id="show-qr">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+      <span>Show QR Code</span>
+    </a>
+  </div>
+
+  <!-- QR Code Modal -->
+  <div id="qr-modal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-close" id="close-qr">&times;</div>
+      <h3 style="color: white; margin-bottom: 20px;">Scan to View on Mobile</h3>
+      <div id="qrcode"></div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/easyqrcodejs@4.6.1/dist/easy.qrcode.min.js"></script>
   <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
   <script src="js/script.js"></script>
   <script src="js/journey.js"></script>

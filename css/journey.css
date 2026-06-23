@@ -1,6 +1,6 @@
 .journey-section {
   position: relative;
-  background: #02020c; /* Match portfolio dark theme */
+  background: var(--bg-dark); /* Match portfolio dark theme */
   color: #fff;
 }
 
@@ -17,7 +17,7 @@
   overflow: hidden;
   display: flex;
   align-items: center;
-  background: radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.05) 0%, transparent 50%);
+  background: radial-gradient(circle at 50% 50%, rgba(var(--primary-rgb), 0.05) 0%, transparent 50%);
 }
 
 .journey-track {
@@ -32,7 +32,7 @@
 .milestone {
   width: 380px;
   background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(124, 58, 237, 0.2);
+  border: 1px solid rgba(var(--primary-rgb), 0.2);
   padding: 40px;
   border-radius: 20px;
   backdrop-filter: blur(15px);
@@ -55,7 +55,7 @@
   right: -1px;
   bottom: -1px;
   border-radius: 20px;
-  background: linear-gradient(45deg, transparent, rgba(124, 58, 237, 0.5), transparent);
+  background: linear-gradient(45deg, transparent, rgba(var(--primary-rgb), 0.5), transparent);
   z-index: -1;
   opacity: 0;
   transition: opacity 0.5s;
@@ -71,7 +71,7 @@
 }
 
 .milestone-date {
-  color: #7c3aed;
+  color: var(--primary);
   font-weight: 800;
   font-size: 1.1rem;
   letter-spacing: 2px;
@@ -117,7 +117,7 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.5), transparent);
+  background: linear-gradient(90deg, transparent, rgba(var(--primary-rgb), 0.5), transparent);
   z-index: 5;
 }
 
@@ -129,8 +129,8 @@
   width: 400vw; /* Massive width */
   height: 100%;
   background-image: 
-    linear-gradient(rgba(124, 58, 237, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(124, 58, 237, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(var(--primary-rgb), 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--primary-rgb), 0.05) 1px, transparent 1px);
   background-size: 50px 50px;
   z-index: 0;
   pointer-events: none;

@@ -1,4 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+  --primary: #7c3aed;
+  --bg-dark: #02020c;
+  --primary-rgb: 124, 58, 237;
+}
 
 
 * {
@@ -15,8 +19,47 @@
 }
 
 body {
-  background-color: #02020c;
+  background-color: var(--bg-dark);
   color: aliceblue;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Text Selection Highlight */
+::selection {
+  background-color: #7c3aed;
+  color: #ffffff;
+}
+::-moz-selection {
+  background-color: #7c3aed;
+  color: #ffffff;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6d28d9;
+}
+
+/* Cursors */
+a, button {
+  cursor: pointer;
 }
 
 header {
@@ -91,7 +134,7 @@ nav a {
 
 .nav_link_wrapper:hover a,
 .nav_link_wrapper.active a {
-  color: #7c3aed;
+  color: var(--primary);
 }
 
 .side {
@@ -101,7 +144,7 @@ nav a {
 
 .hero {
   display: flex;
-  background: #02020c;
+  background: var(--bg-dark);
   justify-content: space-between;
   margin: 0px 30px;
   border: 2px solid transparent;
@@ -138,13 +181,13 @@ nav a {
 }
 
 .outerBG1 {
-  background: linear-gradient(#02020c, #11003e);
+  background: linear-gradient(var(--bg-dark), #11003e);
   padding: 40px 0;
   overflow: hidden;
 }
 
 .sideLine {
-  background: linear-gradient(#7250d2, #02020c);
+  background: linear-gradient(#7250d2, var(--bg-dark));
   width: 2px;
   margin: 15px;
   transition: 0.6s all;
@@ -172,11 +215,11 @@ nav a {
 }
 
 .purple {
-  color: #7c3aed;
+  color: var(--primary);
 }
 
 #typewriter {
-  color: #7c3aed;
+  color: var(--primary);
   font-weight: 700;
 }
 
@@ -208,8 +251,8 @@ nav a {
 
 .buttons button,
 .extra {
-  background: rgba(124, 58, 237, 0.15);
-  border: 1px solid #7c3aed;
+  background: rgba(var(--primary-rgb), 0.15);
+  border: 1px solid var(--primary);
   border-radius: 999px;
   padding: 10px 15px;
   width: fit-content;
@@ -217,7 +260,7 @@ nav a {
 }
 
 .buttons button {
-  background: rgba(124, 58, 237);
+  background: rgba(var(--primary-rgb));
 }
 
 .extra {

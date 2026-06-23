@@ -19,7 +19,7 @@
 }
 
 .hamburger.active svg {
-  stroke: #7c3aed;
+  stroke: var(--primary);
   transform: rotate(90deg);
 }
 
@@ -40,7 +40,7 @@
 
       .techStackBody {
     border-right: none;
-    border-top: 4px solid #7c3aed;
+    border-top: 4px solid var(--primary);
     border-radius: 0 0 20px 20px;
     text-align: center;
     width: 70%;
@@ -84,7 +84,7 @@
     gap: 40px;
     transition: right 0.4s ease-in-out;
     z-index: 90;
-    border-left: 1px solid rgba(124, 58, 237, 0.3);
+    border-left: 1px solid rgba(var(--primary-rgb), 0.3);
     padding: 0;
     transform: none;
   }
@@ -212,7 +212,7 @@ margin-top: 30px;
 
   .techStackBody {
     border-right: none;
-    border-top: 4px solid #7c3aed;
+    border-top: 4px solid var(--primary);
     border-radius: 0 0 20px 20px;
     text-align: center;
     width: 70%;

@@ -1,26 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
 .skillImg img {
   height: 80px;
 }
-
 .skillCard {
   width: 18%;
   background: linear-gradient(180deg, #1a1038 0%, #130c2e 50%, #0f0b22 100%);
-  border: 1px solid #7c3aed;
+  border: 1px solid var(--primary);
   border-radius: 20px;
-  box-shadow: 0 0 20px rgba(124, 58, 237, 0.15);
+  box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.15);
   color: #f8fafc;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  user-select: none;
 }
 
 .divider {
   width: 90%;
   height: 2px;
-  background-color: #7c3aed;
+  background-color: var(--primary);
   margin: 5px;
 }
 
@@ -301,7 +299,7 @@ to {
   background:
     radial-gradient(
       circle at 24% 66%,
-      rgba(124, 58, 237, 0.208),
+      rgba(var(--primary-rgb), 0.208),
       transparent 40%
     ),
     radial-gradient(
@@ -309,7 +307,7 @@ to {
       rgba(59, 130, 246, 0.15),
       transparent 40%
     ),
-    #02020c;
+    var(--bg-dark);
 }
 
 .techStackText {
@@ -341,13 +339,13 @@ to {
   color: #cbd5e1;
   background: linear-gradient(
     90deg,
-    rgba(124, 58, 237, 0.03) 0%,
-    rgba(124, 58, 237, 0.1) 100%
+    rgba(var(--primary-rgb), 0.03) 0%,
+    rgba(var(--primary-rgb), 0.1) 100%
   );
-  border-right: 4px solid #7c3aed;
+  border-right: 4px solid var(--primary);
   padding: 24px 30px;
   border-radius: 20px 0 0 20px;
-  box-shadow: -5px 5px 20px rgba(124, 58, 237, 0.08);
+  box-shadow: -5px 5px 20px rgba(var(--primary-rgb), 0.08);
   text-align: right;
   backdrop-filter: blur(10px);
 }
