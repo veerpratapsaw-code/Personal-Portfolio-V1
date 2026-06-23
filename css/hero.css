@@ -210,7 +210,7 @@ nav a {
   flex-direction: column;
 }
 
-.topLeft_text .text h3 {
+.topLeft_text .text h2 {
   min-height: 2.5em;
 }
 
@@ -287,3 +287,4 @@ nav a {
   opacity: 1;
   transform: translateY(0);
 }
+
