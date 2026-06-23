@@ -12,7 +12,7 @@
   align-items: center;
 }
 
-.projectsHeading h5 {
+.projectsHeading .eyebrow {
   color: var(--primary);
   font-size: 1.2rem;
   letter-spacing: 2px;
@@ -20,7 +20,7 @@
   margin-bottom: 10px;
 }
 
-.projectsHeading h1 {
+.projectsHeading h2 {
   font-size: 4rem;
   color: #fff;
   margin: 0;
@@ -75,7 +75,7 @@
 
 .mp-tags {
   font-size: 1rem;
-  color: #a0a0a0;
+  color: #cbd5e1;
   font-family: 'Inter', sans-serif;
   letter-spacing: 1px;
 }
@@ -148,3 +148,5 @@
     font-size: 1.5rem;
   }
 }
+
+
