@@ -60,6 +60,13 @@
 }
 
 @media (max-width: 1050px) {
+  /* Make sticky nav transparent on mobile so only hamburger floats over text */
+  .stickyNav {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+  }
+
   /* Global Nav / Header */
   .hamburger {
     display: block;

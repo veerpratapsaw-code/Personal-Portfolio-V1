@@ -61,6 +61,7 @@
   <link rel="stylesheet" href="css/responsive.css" />
   <link rel="stylesheet" href="css/contextmenu.css" />
   <link rel="stylesheet" href="css/loader.css" />
+  <link rel="stylesheet" href="css/modal.css" />
   <link rel="icon" type="image/png" href="assets/images/favicon.webp" />
 </head>
 
@@ -963,6 +964,9 @@
     </div>
   </footer>
 
+ 
+
+
   <!-- Custom Context Menu -->
   <div id="custom-context-menu" class="custom-context-menu">
     <a href="#about" class="context-menu-item">
@@ -994,6 +998,16 @@
       <div class="modal-close" id="close-qr">&times;</div>
       <h3 style="color: white; margin-bottom: 20px;">Scan to View on Mobile</h3>
       <div id="qrcode"></div>
+    </div>
+  </div>
+
+  <!-- Skills Modal -->
+  <div id="skills-modal" class="skills-modal-overlay hidden">
+    <div class="skills-modal-content" data-lenis-prevent>
+      <button id="close-modal" class="close-btn" aria-label="Close Modal">&times;</button>
+      <div id="modal-body" class="markdown-style">
+        <!-- Content dynamically injected here -->
+      </div>
     </div>
   </div>
 
