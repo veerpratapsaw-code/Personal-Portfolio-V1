@@ -871,6 +871,13 @@
       <div class="divider"></div>
     </div>
 
+    <!-- Explore Universe Button -->
+    <div class="universe-btn-container">
+      <button id="open-universe-btn" class="universe-btn">
+        <span>Explore Project Universe 🚀</span>
+      </button>
+    </div>
+
     <div id="project-preview-image">
       <img src="" alt="Project Preview">
     </div>
@@ -1007,6 +1014,44 @@
       <button id="close-modal" class="close-btn" aria-label="Close Modal">&times;</button>
       <div id="modal-body" class="markdown-style">
         <!-- Content dynamically injected here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Big Bang Cinematic Overlays -->
+  <div id="dim-overlay" class="dim-overlay"></div>
+  <div id="flash-overlay" class="flash-overlay"></div>
+
+  <!-- Universe Modal -->
+  <div id="universe-modal" class="universe-modal-overlay hidden">
+    <button id="close-universe" class="close-universe-btn" aria-label="Close Universe">&times;</button>
+    <div id="universe-coords" class="universe-coords">X: 0 | Y: 0</div>
+    <div id="universe-canvas" class="universe-canvas">
+      <!-- Dummy Project Cards Scattered -->
+      <div class="u-card" style="top: -200px; left: -400px;">
+        <h3>Arduino Smart Home</h3>
+        <p>IoT / C++</p>
+      </div>
+      <div class="u-card" style="top: 300px; left: 200px;">
+        <h3>AI Jarvis Assistant</h3>
+        <p>Python / NLP</p>
+      </div>
+      <div class="u-card" style="top: -50px; left: 800px;">
+        <h3>E-Commerce Platform</h3>
+        <p>MERN Stack</p>
+      </div>
+      <div class="u-card" style="top: 600px; left: -100px;">
+        <h3>Self-driving Rover</h3>
+        <p>Robotics / OpenCV</p>
+      </div>
+      <div class="u-card" style="top: -600px; left: 100px;">
+        <h3>Weather Dashboard</h3>
+        <p>React / API</p>
+      </div>
+      <!-- Black Hole at Center -->
+      <div id="black-hole" class="black-hole" style="top: 0px; left: 0px;">
+        <div class="accretion-disk"></div>
+        <div class="event-horizon"></div>
       </div>
     </div>
   </div>

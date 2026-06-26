@@ -148,3 +148,39 @@
     font-size: 1.5rem;
   }
 }
+
+
+/* Universe Button */
+.universe-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.universe-btn {
+  background: linear-gradient(45deg, #7c3aed, #4f46e5);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-family: "google sans flex", sans-serif;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(124, 58, 237, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.universe-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(124, 58, 237, 0.5);
+}
+
+.universe-btn.sparking {
+  transform: scale(0.9);
+  box-shadow: 0 0 50px 20px rgba(255, 255, 255, 1);
+  background: #ffffff;
+  color: transparent;
+  transition: all 0.2s ease-in;
+}

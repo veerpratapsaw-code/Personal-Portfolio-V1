@@ -1,4 +1,3 @@
-/* Skills Modal Styles */
 .skills-modal-overlay {
   position: fixed;
   top: 0;
@@ -161,3 +160,211 @@
     font-size: 2rem;
   }
 }
+
+/* --- Big Bang Overlays --- */
+.dim-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 999998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.flash-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #ffffff;
+  z-index: 999999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+/* --- Universe Grid Modal --- */
+.universe-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0b0b1a; /* Very dark deep space purple/black */
+  background-image: radial-gradient(rgba(124, 58, 237, 0.3) 1px, transparent 1px);
+  background-size: 25px 25px;
+  background-position: 0 0, 25px 25px;
+  z-index: 100000;
+  overflow: hidden; /* Hide scrollbars, we will pan with JS */
+  
+  /* Initial State before Big Bang clears */
+  opacity: 0;
+  visibility: hidden;
+  filter: blur(50px) brightness(10);
+  transition: opacity 0.1s ease; 
+  cursor: grab;
+}
+
+.universe-modal-overlay.open {
+  visibility: visible;
+  opacity: 1;
+  filter: blur(0px) brightness(1);
+  /* Long cinematic fade into clarity */
+  transition: filter 3.5s cubic-bezier(0.1, 0.9, 0.2, 1), opacity 0.1s ease;
+}
+
+.universe-modal-overlay.engulfed {
+  background-color: #000 !important;
+  background-image: none !important;
+}
+
+.universe-modal-overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.universe-modal-overlay:active {
+  cursor: grabbing;
+}
+
+
+.close-universe-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2.5rem;
+  color: white;
+  background: none;
+  border: none;
+  z-index: 100001;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.close-universe-btn:hover {
+  transform: scale(1.2);
+  color: #7c3aed;
+}
+
+.universe-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  overflow: visible;
+  transition: transform 0.1s linear; /* Smooth panning */
+}
+
+.universe-coords {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  background: rgba(20, 20, 40, 0.8);
+  border: 1px solid rgba(124, 58, 237, 0.5);
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: #fff;
+  font-family: 'Inter', monospace;
+  font-size: 1.1rem;
+  font-weight: 600;
+  z-index: 100002;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.3);
+  pointer-events: none;
+}
+
+.u-card {
+  position: absolute;
+  width: 250px;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  border-radius: 12px;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.2);
+  pointer-events: none; /* Let drag events pass through */
+  transform: translate(-50%, -50%) scale(0); /* Center and hide initially */
+  opacity: 0;
+}
+
+.u-card.visible {
+  /* The var(--float-delay) is injected via JS so they all float out of sync */
+  animation: 
+    materialize 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, 
+    float 4s ease-in-out infinite var(--float-delay);
+}
+
+@keyframes materialize {
+  0% { transform: translate(-50%, -50%) scale(0); opacity: 0; filter: blur(10px); }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 1; filter: blur(0); }
+}
+
+@keyframes float {
+  0% { transform: translate(-50%, -50%) scale(1) translateY(0px); }
+  50% { transform: translate(-50%, -50%) scale(1) translateY(-20px); }
+  100% { transform: translate(-50%, -50%) scale(1) translateY(0px); }
+}
+
+.black-hole {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  z-index: 1000;
+  transition: transform 1.5s cubic-bezier(0.5, 0, 0.2, 1);
+}
+
+.black-hole.explode {
+  transform: translate(-50%, -50%) scale(50);
+}
+
+.event-horizon {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #000;
+  border-radius: 50%;
+  box-shadow: 0 0 50px 10px rgba(124, 58, 237, 0.8), inset 0 0 20px rgba(0,0,0,1);
+  z-index: 2;
+}
+
+.accretion-disk {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    rgba(124, 58, 237, 0.1) 20%,
+    rgba(168, 85, 247, 0.8) 50%,
+    rgba(124, 58, 237, 0.1) 80%,
+    transparent 100%
+  );
+  filter: blur(8px);
+  animation: spin 3s linear infinite;
+  z-index: 1;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+.u-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #c4adeb;
+}
+
+.u-card p {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+

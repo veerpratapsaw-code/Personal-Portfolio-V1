@@ -1,4 +1,4 @@
-﻿const lenis = new Lenis({
+const lenis = new Lenis({
   duration: 1.6 ,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
   smooth: true
@@ -565,5 +565,183 @@ if (skillsModal && modalBody && closeModalBtn) {
       document.body.classList.remove('no-scroll');
       if (typeof lenis !== 'undefined') lenis.start(); // Resume Lenis smooth scrolling
     }
+  });
+}
+
+// --- Project Universe Logic ---
+const openUniverseBtn = document.getElementById('open-universe-btn');
+const closeUniverseBtn = document.getElementById('close-universe');
+const universeModal = document.getElementById('universe-modal');
+const universeCanvas = document.getElementById('universe-canvas');
+const universeCoords = document.getElementById('universe-coords');
+const blackHole = document.getElementById('black-hole');
+const uCards = document.querySelectorAll('.u-card');
+
+// Randomize float delays dynamically in JS
+uCards.forEach(card => {
+  card.style.setProperty('--float-delay', `${Math.random() * -4}s`);
+});
+
+if (openUniverseBtn && universeModal && universeCanvas) {
+  const dimOverlay = document.getElementById('dim-overlay');
+  const flashOverlay = document.getElementById('flash-overlay');
+
+  openUniverseBtn.addEventListener('click', () => {
+    if (openUniverseBtn.classList.contains('sparking')) return;
+    
+    // 1. The Dimming and the Spark
+    if (dimOverlay) dimOverlay.style.opacity = '1';
+    openUniverseBtn.classList.add('sparking');
+    
+    // 2. The Blinding Flash (after spark buildup)
+    setTimeout(() => {
+      if (flashOverlay) flashOverlay.style.opacity = '1';
+      
+      // 3. Swap to the Universe during the pure white blindness
+      setTimeout(() => {
+        openUniverseBtn.classList.remove('sparking');
+        if (dimOverlay) dimOverlay.style.opacity = '0';
+        
+        universeModal.classList.remove('hidden');
+        universeModal.classList.remove('open'); // Reset so it starts blurred
+        
+        // Center mathematically
+        translateX = window.innerWidth / 2;
+        translateY = window.innerHeight / 2;
+        updateCanvasTransform();
+        
+        document.body.classList.add('no-scroll');
+        if (typeof lenis !== 'undefined') lenis.stop();
+        
+        void universeModal.offsetWidth; // Force reflow
+        
+        // Start the long Cinematic Blur-Clear transition
+        universeModal.classList.add('open');
+        
+        // Fade out the flash very slowly
+        if (flashOverlay) {
+          flashOverlay.style.transition = 'opacity 3s ease-out';
+          flashOverlay.style.opacity = '0';
+        }
+
+        // Staggered Card Materialization
+        uCards.forEach((card, index) => {
+          card.classList.remove('visible'); // Reset
+          setTimeout(() => {
+            card.classList.add('visible');
+          }, 1000 + (index * 150)); // Start appearing as flash clears
+        });
+        
+        // Clean up flash transition for next time
+        setTimeout(() => {
+          if (flashOverlay) flashOverlay.style.transition = 'opacity 0.15s ease';
+        }, 3000);
+        
+      }, 150); // duration of pure white blindness
+    }, 400); // duration of the spark charge-up
+  });
+
+  closeUniverseBtn.addEventListener('click', () => {
+    // Spawn the Black Hole exactly where the user is currently looking!
+    // The center of the screen in canvas coordinates:
+    const targetX = (window.innerWidth / 2) - translateX;
+    const targetY = (window.innerHeight / 2) - translateY;
+
+    if (blackHole) {
+      blackHole.style.left = `${targetX}px`;
+      blackHole.style.top = `${targetY}px`;
+      // Force reflow so it instantly moves before exploding
+      void blackHole.offsetWidth; 
+      
+      // Trigger the engulfing explosion
+      blackHole.classList.add('explode');
+    }
+    
+    universeModal.classList.add('engulfed');
+
+    // Wait for the universe to be engulfed in darkness, then shrink back
+    setTimeout(() => {
+      universeModal.classList.remove('open');
+      document.body.classList.remove('no-scroll');
+      if (typeof lenis !== 'undefined') lenis.start();
+      
+      // Hide cards so they materialize nicely next time
+      uCards.forEach(card => card.classList.remove('visible'));
+
+      // Reset the black hole after it's hidden
+      setTimeout(() => {
+        universeModal.classList.add('hidden');
+        universeModal.classList.remove('engulfed');
+        if (blackHole) {
+          blackHole.classList.remove('explode');
+          // Reset back to origin (0,0) for next time
+          blackHole.style.left = '0px';
+          blackHole.style.top = '0px';
+        }
+      }, 1200);
+    }, 1500);
+  });
+
+  // Drag to pan logic
+  let isDragging = false;
+  let startX, startY;
+  let translateX = 0, translateY = 0;
+
+  function updateCanvasTransform() {
+    universeCanvas.style.transform = `translate(${translateX}px, ${translateY}px)`;
+    
+    // Pan the background grid simultaneously for infinite effect
+    universeModal.style.backgroundPosition = `${translateX}px ${translateY}px, ${translateX + 25}px ${translateY + 25}px`;
+
+    // Calculate coordinates of the center of the screen
+    if (universeCoords) {
+      let uniX = Math.round(-(translateX - window.innerWidth / 2));
+      let uniY = Math.round(-(translateY - window.innerHeight / 2));
+      universeCoords.textContent = `X: ${uniX} | Y: ${-uniY}`;
+    }
+  }
+
+  universeModal.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.clientX - translateX;
+    startY = e.clientY - translateY;
+    universeCanvas.style.transition = 'none'; // Remove transition for instant drag
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    translateX = e.clientX - startX;
+    translateY = e.clientY - startY;
+    
+    updateCanvasTransform();
+  });
+
+  window.addEventListener('mouseup', () => {
+    if (isDragging) {
+      isDragging = false;
+      universeCanvas.style.transition = 'transform 0.1s linear';
+    }
+  });
+
+  // Touch support for mobile
+  universeModal.addEventListener('touchstart', (e) => {
+    isDragging = true;
+    startX = e.touches[0].clientX - translateX;
+    startY = e.touches[0].clientY - translateY;
+    universeCanvas.style.transition = 'none';
+  });
+
+  window.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    translateX = e.touches[0].clientX - startX;
+    translateY = e.touches[0].clientY - startY;
+
+    updateCanvasTransform();
+  });
+
+  window.addEventListener('touchend', () => {
+    isDragging = false;
+    universeCanvas.style.transition = 'transform 0.1s linear';
   });
 }
