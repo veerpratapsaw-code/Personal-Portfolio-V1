@@ -250,6 +250,7 @@ document.addEventListener("DOMContentLoaded", () => {
         universeCanvas.style.transition = 'transform 0.1s linear';
       }
     });
+    
 
     // Touch support for mobile dragging and zooming
     let initialTouchDist = 0;
