@@ -251,28 +251,67 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Touch support for mobile
+    // Touch support for mobile dragging and zooming
+    let initialTouchDist = 0;
+
     universeModal.addEventListener('touchstart', (e) => {
-      if (hologramOpen) return; // Lock dragging
-      isDragging = true;
-      hasDragged = false;
-      startX = e.touches[0].clientX - translateX;
-      startY = e.touches[0].clientY - translateY;
-      universeCanvas.style.transition = 'none';
+      if (hologramOpen) return;
+      if (e.touches.length === 1) {
+        isDragging = true;
+        hasDragged = false;
+        startX = e.touches[0].clientX - translateX;
+        startY = e.touches[0].clientY - translateY;
+        universeCanvas.style.transition = 'none';
+      } else if (e.touches.length === 2) {
+        isDragging = false;
+        hasDragged = true;
+        initialTouchDist = Math.hypot(
+          e.touches[0].clientX - e.touches[1].clientX,
+          e.touches[0].clientY - e.touches[1].clientY
+        );
+      }
     });
 
     window.addEventListener('touchmove', (e) => {
-      if (!isDragging) return;
-      hasDragged = true;
-      translateX = e.touches[0].clientX - startX;
-      translateY = e.touches[0].clientY - startY;
+      if (hologramOpen) return;
+      if (e.touches.length === 1 && isDragging) {
+        hasDragged = true;
+        translateX = e.touches[0].clientX - startX;
+        translateY = e.touches[0].clientY - startY;
+        updateCanvasTransform();
+      } else if (e.touches.length === 2) {
+        e.preventDefault(); // prevent native scroll
+        const currentDist = Math.hypot(
+          e.touches[0].clientX - e.touches[1].clientX,
+          e.touches[0].clientY - e.touches[1].clientY
+        );
+        if (initialTouchDist > 0) {
+          const oldScale = currentScale;
+          const zoomSpeed = 0.01;
+          const diff = currentDist - initialTouchDist;
+          currentScale += diff * zoomSpeed;
+          currentScale = Math.max(0.2, Math.min(currentScale, 3));
+          
+          if (currentScale !== oldScale) {
+            const scaleRatio = currentScale / oldScale;
+            const cx = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+            const cy = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+            translateX = cx - (cx - translateX) * scaleRatio;
+            translateY = cy - (cy - translateY) * scaleRatio;
+            universeCanvas.style.transition = 'none';
+            updateCanvasTransform();
+          }
+          initialTouchDist = currentDist;
+        }
+      }
+    }, { passive: false });
 
-      updateCanvasTransform();
-    });
-
-    window.addEventListener('touchend', () => {
-      isDragging = false;
-      universeCanvas.style.transition = 'transform 0.1s linear';
+    window.addEventListener('touchend', (e) => {
+      if (e.touches.length === 0) {
+        isDragging = false;
+        initialTouchDist = 0;
+        universeCanvas.style.transition = 'transform 0.1s linear';
+      }
     });
 
     // Zooming logic with Mouse Wheel
@@ -313,13 +352,13 @@ document.addEventListener("DOMContentLoaded", () => {
         translateY = window.innerHeight / 2;
         currentScale = 1;
         
-        universeCanvas.style.transition = 'transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+        universeCanvas.style.transition = 'transform 1s ease-in-out';
         updateCanvasTransform();
         
         // reset transition after panning finishes
         setTimeout(() => {
           universeCanvas.style.transition = 'transform 0.1s linear';
-        }, 800);
+        }, 1000);
       });
     }
   }

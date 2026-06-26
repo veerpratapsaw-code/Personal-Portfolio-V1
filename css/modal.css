@@ -299,6 +299,21 @@
   box-shadow: 0 0 25px rgba(124, 58, 237, 0.6);
 }
 
+@media (max-width: 768px) {
+  .universe-coords {
+    bottom: 80px;
+    left: 20px;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+  .recenter-btn {
+    bottom: 80px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+  }
+}
+
 .u-card {
   position: absolute;
   width: 250px;
