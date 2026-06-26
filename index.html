@@ -1026,39 +1026,58 @@
   <div id="universe-modal" class="universe-modal-overlay hidden">
     <button id="close-universe" class="close-universe-btn" aria-label="Close Universe">&times;</button>
     <div id="universe-coords" class="universe-coords">X: 0 | Y: 0</div>
+    <button id="recenter-universe" class="recenter-btn" title="Return to Center">
+      <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <circle cx="12" cy="12" r="2"></circle>
+        <line x1="12" y1="2" x2="12" y2="6"></line>
+        <line x1="12" y1="18" x2="12" y2="22"></line>
+        <line x1="2" y1="12" x2="6" y2="12"></line>
+        <line x1="18" y1="12" x2="22" y2="12"></line>
+      </svg>
+    </button>
     <div id="universe-canvas" class="universe-canvas">
-      <!-- Dummy Project Cards Scattered -->
-      <div class="u-card" style="top: -200px; left: -400px;">
-        <h3>Arduino Smart Home</h3>
-        <p>IoT / C++</p>
-      </div>
-      <div class="u-card" style="top: 300px; left: 200px;">
-        <h3>AI Jarvis Assistant</h3>
-        <p>Python / NLP</p>
-      </div>
-      <div class="u-card" style="top: -50px; left: 800px;">
-        <h3>E-Commerce Platform</h3>
-        <p>MERN Stack</p>
-      </div>
-      <div class="u-card" style="top: 600px; left: -100px;">
-        <h3>Self-driving Rover</h3>
-        <p>Robotics / OpenCV</p>
-      </div>
-      <div class="u-card" style="top: -600px; left: 100px;">
-        <h3>Weather Dashboard</h3>
-        <p>React / API</p>
-      </div>
+      <!-- Projects will be dynamically injected here via JS -->
+
       <!-- Black Hole at Center -->
       <div id="black-hole" class="black-hole" style="top: 0px; left: 0px;">
         <div class="accretion-disk"></div>
         <div class="event-horizon"></div>
       </div>
     </div>
+    
+    <!-- The Hologram Data-Pad (Hidden by default) -->
+    <div id="hologram-modal" class="hologram-overlay hidden">
+      <div class="hologram-content">
+        <button id="close-hologram" class="close-hologram-btn">&times;</button>
+        <div class="hologram-layout">
+          <!-- Media Carousel (Left side) -->
+          <div class="hologram-media">
+            <!-- Images/Videos injected via JS -->
+            <div id="hologram-media-container" class="media-container"></div>
+          </div>
+          <!-- Project Data (Right side) -->
+          <div class="hologram-data">
+            <h2 id="hologram-title">Project Title</h2>
+            <p id="hologram-tech" class="tech-stack">Tech Stack</p>
+            <p id="hologram-desc" class="desc">Project description goes here...</p>
+            <a id="hologram-link" href="#" target="_blank" class="hologram-btn">View Source</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="https://unpkg.com/easyqrcodejs@4.6.1/dist/easy.qrcode.min.js"></script>
   <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
-  <script src="js/script.js"></script>
+  <script src="js/scroll-animations.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/typewriter.js"></script>
+  <script src="js/project-preview.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/qr-modals.js"></script>
+  <script src="js/skills-modal.js"></script>
+  <script src="js/universe.js"></script>
   <script src="js/journey.js"></script>
 </body>
 

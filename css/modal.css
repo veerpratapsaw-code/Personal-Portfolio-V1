@@ -273,6 +273,32 @@
   pointer-events: none;
 }
 
+.recenter-btn {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  background: rgba(20, 20, 40, 0.8);
+  border: 1px solid rgba(124, 58, 237, 0.5);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100002;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+.recenter-btn:hover {
+  transform: scale(1.1);
+  background: rgba(124, 58, 237, 0.8);
+  box-shadow: 0 0 25px rgba(124, 58, 237, 0.6);
+}
+
 .u-card {
   position: absolute;
   width: 250px;
@@ -285,9 +311,16 @@
   color: #fff;
   text-align: center;
   box-shadow: 0 0 20px rgba(124, 58, 237, 0.2);
-  pointer-events: none; /* Let drag events pass through */
+  pointer-events: auto; /* Let clicks register */
+  cursor: pointer;
   transform: translate(-50%, -50%) scale(0); /* Center and hide initially */
   opacity: 0;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.u-card:hover {
+  border-color: rgba(168, 85, 247, 0.8);
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.5);
 }
 
 .u-card.visible {
@@ -368,3 +401,143 @@
   color: #aaa;
 }
 
+/* --- Hologram Data-Pad --- */
+.hologram-overlay {
+  position: absolute; /* Relative to universe-modal */
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100005;
+  background: rgba(0, 0, 0, 0.85); /* Dark black translucent */
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.4s ease, visibility 0.4s;
+}
+
+.hologram-overlay.hidden {
+  opacity: 0; 
+  visibility: hidden;
+}
+
+.hologram-content {
+  width: 80%;
+  max-width: 1000px;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(124, 58, 237, 0.5);
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(124, 58, 237, 0.4);
+  padding: 40px;
+  position: relative;
+  transform: scale(0.9);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hologram-overlay:not(.hidden) .hologram-content {
+  transform: scale(1);
+}
+
+.hologram-layout {
+  display: flex;
+  gap: 40px;
+  color: white;
+}
+
+.hologram-media {
+  flex: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hologram-media img, .hologram-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hologram-data {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hologram-data h2 {
+  color: #c4adeb;
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.hologram-data .tech-stack {
+  color: #7c3aed;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.hologram-data .desc {
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  font-size: 1.05rem;
+}
+
+.hologram-btn {
+  background: linear-gradient(45deg, #7c3aed, #4f46e5);
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  text-align: center;
+  width: fit-content;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hologram-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(124, 58, 237, 0.4);
+}
+
+.close-hologram-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
+  color: #cbd5e1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
+  line-height: 1;
+}
+
+.close-hologram-btn:hover {
+  color: #7c3aed;
+  transform: scale(1.1);
+}
+
+/* Mobile Responsiveness for Hologram */
+@media (max-width: 768px) {
+  .hologram-layout {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .hologram-content {
+    width: 90%;
+    padding: 30px 20px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  .hologram-data h2 {
+    font-size: 1.8rem;
+  }
+}
