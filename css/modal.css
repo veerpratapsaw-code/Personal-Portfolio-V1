@@ -361,6 +361,34 @@
   100% { transform: translate(-50%, -50%) scale(1) translateY(0px); }
 }
 
+.asteroid {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  pointer-events: none;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+  opacity: 0; /* hidden until materialized */
+}
+
+.asteroid.visible {
+  /* opacity is animated to its inline var(--final-opacity) */
+  animation: 
+    materialize-asteroid 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
+    float-asteroid 6s ease-in-out infinite var(--float-delay);
+}
+
+@keyframes materialize-asteroid {
+  0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: var(--final-opacity); }
+}
+
+@keyframes float-asteroid {
+  0% { transform: translate(-50%, -50%) scale(1) translateY(0px) rotate(0deg); }
+  50% { transform: translate(-50%, -50%) scale(1) translateY(-15px) rotate(10deg); }
+  100% { transform: translate(-50%, -50%) scale(1) translateY(0px) rotate(0deg); }
+}
+
 .black-hole {
   position: absolute;
   width: 200px;

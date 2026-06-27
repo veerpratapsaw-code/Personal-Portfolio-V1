@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const universeCoords = document.getElementById('universe-coords');
   const blackHole = document.getElementById('black-hole');
   let uCards = []; // Will be populated dynamically
+  let uAsteroids = [];
 
   const universeProjects = [
     // Important Software (Right Side, close)
@@ -147,6 +148,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const placedPositions = []; // To track where cards are to avoid overlap
 
+    function generateAsteroids(minR, maxR, count) {
+      for (let i = 0; i < count; i++) {
+        const r = Math.random() * (maxR - minR) + minR;
+        const angleRads = Math.random() * Math.PI * 2;
+        const x = Math.round(r * Math.cos(angleRads));
+        const y = Math.round(r * Math.sin(angleRads));
+        
+        const size = Math.random() * 3 + 1; // 1px to 4px
+        const opacity = Math.random() * 0.4 + 0.1;
+
+        const asteroid = document.createElement('div');
+        asteroid.className = 'asteroid';
+        asteroid.style.left = `${x}px`;
+        asteroid.style.top = `${y}px`;
+        asteroid.style.width = `${size}px`;
+        asteroid.style.height = `${size}px`;
+        asteroid.style.setProperty('--final-opacity', opacity);
+        asteroid.style.setProperty('--float-delay', `${Math.random() * -10}s`);
+        
+        universeCanvas.appendChild(asteroid);
+      }
+    }
+
+    // Generate soft asteroid boundaries between importance levels
+    generateAsteroids(700, 800, 150); // Between Level 1 and 2
+    generateAsteroids(1400, 1500, 250); // Between Level 2 and 3
+
     universeProjects.forEach((proj) => {
       let minRadius, maxRadius;
       if (proj.importance === 1) { minRadius = 300; maxRadius = 700; }
@@ -215,6 +243,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     uCards = document.querySelectorAll('.u-card');
+    uAsteroids = document.querySelectorAll('.asteroid');
   }
 
   // Call once to generate
@@ -278,6 +307,14 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => {
               card.classList.add('visible');
             }, 1000 + (index * 150)); // Start appearing as flash clears
+          });
+
+          // Asteroid Materialization
+          uAsteroids.forEach((asteroid) => {
+            asteroid.classList.remove('visible');
+            setTimeout(() => {
+              asteroid.classList.add('visible');
+            }, 1000 + (Math.random() * 1000)); // Random pop-in
           });
 
           // Clean up flash transition for next time
