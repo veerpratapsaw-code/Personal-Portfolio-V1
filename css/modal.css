@@ -303,14 +303,17 @@
 
 @media (max-width: 768px) {
   .universe-coords {
-    bottom: 80px;
+    bottom: auto;
+    top: 20px;
     left: 20px;
     font-size: 0.9rem;
     padding: 8px 12px;
   }
   .recenter-btn {
-    bottom: 80px;
-    right: 20px;
+    bottom: auto;
+    top: 70px;
+    right: auto;
+    left: 20px;
     width: 45px;
     height: 45px;
   }
@@ -318,7 +321,7 @@
 
 .u-card {
   position: absolute;
-  width: 250px;
+  width: 320px;
   padding: 20px;
   background: rgba(15, 23, 42, 0.7);
   backdrop-filter: blur(10px);

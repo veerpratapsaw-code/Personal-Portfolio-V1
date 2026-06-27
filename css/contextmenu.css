@@ -1,6 +1,6 @@
 .custom-context-menu {
   position: fixed;
-  z-index: 10000;
+  z-index: 1000000000;
   width: 240px;
   background: rgba(15, 11, 34, 0.7);
   backdrop-filter: blur(16px);
@@ -68,7 +68,7 @@
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  z-index: 100000;
+  z-index: 1000000000;
   display: flex;
   justify-content: center;
   align-items: center;
