@@ -1,0 +1,110 @@
+﻿/* ------------------------------------- */
+/* RADAR DIRECTORY STYLES                */
+/* ------------------------------------- */
+.radar-sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 100vh;
+  height: 100dvh;
+  background: rgba(10, 15, 30, 0.95);
+  border-right: 1px solid rgba(124, 58, 237, 0.3);
+  backdrop-filter: blur(20px);
+  z-index: 100010; /* high enough to cover everything */
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.radar-sidebar.open {
+  transform: translateX(0);
+}
+
+.radar-header {
+  padding: 25px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.radar-header h3 {
+  font-size: 1.2rem;
+  font-family: var(--font-primary);
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.close-radar-btn {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.6);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close-radar-btn:hover {
+  color: white;
+}
+
+.radar-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+.radar-content::-webkit-scrollbar { width: 6px; }
+.radar-content::-webkit-scrollbar-track { background: transparent; }
+.radar-content::-webkit-scrollbar-thumb { background: rgba(124,58,237,0.3); border-radius: 10px; }
+
+.radar-category {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+.radar-item {
+  background: rgba(255,255,255,0.05);
+  padding: 12px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-left: 3px solid transparent;
+}
+
+.radar-item:hover {
+  background: rgba(124,58,237,0.15);
+  border-left-color: var(--color-primary);
+  transform: translateX(5px);
+}
+
+.radar-item-title {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.radar-item-tech {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+}
+
+@media (max-width: 768px) {
+  .radar-sidebar {
+    width: 100vw;
+    border-right: none;
+    background: rgba(10, 15, 30, 0.98);
+  }
+  .close-radar-btn {
+    font-size: 2.5rem;
+}

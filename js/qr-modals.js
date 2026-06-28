@@ -74,12 +74,12 @@ document.addEventListener("DOMContentLoaded", () => {
         new QRCode(document.getElementById("qrcode"), {
           text: window.location.href, // QR Code text
           width: 200,
-          height: 200,
-          logo: "assets/images/logoMe white.webp", // User's logo
-          logoWidth: 50,
-          logoHeight: 50,
-          logoBackgroundColor: '#ffffff',
-          logoBackgroundTransparent: false
+          drawer: 'canvas',
+          logo: "assets/logo_images/logoMe white.webp", // User's logo
+          logoWidth: 60,
+          logoHeight: 60,
+          logoBackgroundColor: 'transparent',
+          logoBackgroundTransparent: true
         });
         qrGenerated = true;
       }

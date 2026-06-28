@@ -1,0 +1,168 @@
+﻿.orbit-ring {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  transition: border-color 1s ease, box-shadow 1s ease;
+}
+
+.orbit-ring.glow {
+  border-color: rgba(168, 85, 247, 0.8);
+  box-shadow: 0 0 10px 2px rgba(124, 58, 237, 0.6), inset 0 0 10px 2px rgba(124, 58, 237, 0.6);
+  z-index: 5;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.u-card {
+  position: absolute;
+  z-index: var(--card-z-index, 10);
+  width: 320px;
+  padding: 20px;
+  background: rgba(10, 15, 30, 0.98);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  border-radius: 12px;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.2);
+  pointer-events: auto; /* Let clicks register */
+  cursor: pointer;
+  transform: translate(-50%, -50%) scale(0); /* Center and hide initially */
+  opacity: 0;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.u-card:hover {
+  border-color: rgba(168, 85, 247, 0.8);
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.5);
+}
+
+.u-card.visible {
+  opacity: 1;
+  animation: 
+    materialize 1.2s ease-in-out forwards, 
+    float 4s ease-in-out infinite var(--float-delay);
+}
+
+@keyframes materialize {
+  0% { transform: translate(-50%, -50%) translate(var(--px, 0px), var(--py, 0px)) scale(0); opacity: 0; filter: blur(10px); }
+  100% { transform: translate(-50%, -50%) translate(var(--px, 0px), var(--py, 0px)) scale(var(--card-z, 1)); opacity: 1; filter: blur(0); }
+}
+
+@keyframes float {
+  0% { transform: translate(-50%, -50%) translate(var(--px, 0px), var(--py, 0px)) scale(var(--card-z, 1)) translateY(0px); }
+  50% { transform: translate(-50%, -50%) translate(var(--px, 0px), var(--py, 0px)) scale(var(--card-z, 1)) translateY(-20px); }
+  100% { transform: translate(-50%, -50%) translate(var(--px, 0px), var(--py, 0px)) scale(var(--card-z, 1)) translateY(0px); }
+}
+
+.asteroid {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+  
+  /* Initial hidden state */
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+  transition: opacity 1.5s ease;
+}
+
+.asteroid.visible {
+  opacity: var(--final-opacity);
+  /* The float animation overrides the scale transition, but opacity transitions smoothly */
+  animation: float-asteroid 6s ease-in-out infinite var(--float-delay);
+}
+
+@keyframes float-asteroid {
+  0% { transform: translate(-50%, -50%) scale(1) translateY(0px) rotate(0deg); }
+  50% { transform: translate(-50%, -50%) scale(1) translateY(-15px) rotate(10deg); }
+  100% { transform: translate(-50%, -50%) scale(1) translateY(0px) rotate(0deg); }
+}
+
+.black-hole {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  z-index: 1000;
+  transition: transform 1.5s ease-in-out;
+}
+
+.black-hole.explode {
+  transform: translate(-50%, -50%) scale(150);
+  transition: transform 1.5s ease-in-out;
+  opacity: 0;
+}
+
+.event-horizon {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #000;
+  border-radius: 50%;
+  box-shadow: 0 0 50px 10px rgba(124, 58, 237, 0.8), inset 0 0 20px rgba(0,0,0,1);
+  z-index: 2;
+}
+
+.accretion-disk {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    rgba(124, 58, 237, 0.1) 20%,
+    rgba(168, 85, 247, 0.8) 50%,
+    rgba(124, 58, 237, 0.1) 80%,
+    transparent 100%
+  );
+  filter: blur(8px);
+  animation: spin 3s linear infinite;
+  z-index: 1;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+.u-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #c4adeb;
+}
+
+.u-card p {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+@media (max-width: 768px) {
+  .u-card {
+    width: 240px;
+    padding: 15px;
+  }
+  .u-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 5px;
+  }
+  .u-card p {
+    font-size: 0.85rem;
+  }
+}
+/* Force orbit glow constantly on tablets and phones since hovering is harder */
+@media (max-width: 1024px) {
+  .orbit-ring {
+    border-color: rgba(168, 85, 247, 0.5) !important;
+    box-shadow: 0 0 8px 1px rgba(124, 58, 237, 0.4), inset 0 0 8px 1px rgba(124, 58, 237, 0.4) !important;
+  }
+}

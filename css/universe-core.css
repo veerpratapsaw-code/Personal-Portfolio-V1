@@ -1,0 +1,233 @@
+﻿/* --- Big Bang Overlays --- */
+.dim-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 999998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.flash-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #ffffff;
+  z-index: 999999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+/* --- Universe Grid Modal --- */
+.universe-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background-color: #0b0b1a; /* Very dark deep space purple/black fallback */
+  z-index: 100000;
+  overflow: hidden; /* Hide scrollbars, we will pan with JS */
+  
+  /* Initial State before Big Bang clears */
+  opacity: 0;
+  visibility: hidden;
+  filter: blur(50px) brightness(10);
+  transition: opacity 0.1s ease; 
+  cursor: grab;
+}
+
+.universe-modal-overlay.open {
+  visibility: visible;
+  opacity: 1;
+  filter: blur(0px) brightness(1);
+  /* Long cinematic fade into clarity */
+  transition: filter 3.5s ease-in-out, opacity 0.1s ease;
+}
+
+.universe-modal-overlay.engulfed {
+  pointer-events: auto;
+  transition: filter 3.5s ease-in-out, opacity 0.1s ease;
+  filter: blur(5px) brightness(0.2);
+  background-color: #000 !important;
+  background-image: none !important;
+}
+
+.universe-modal-overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.universe-modal-overlay:active {
+  cursor: grabbing;
+}
+
+
+/* --- Universe HUD Dashboard --- */
+.universe-dashboard {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100005;
+  pointer-events: none; /* Let clicks pass through empty space */
+}
+
+.universe-dashboard > * {
+  pointer-events: auto; /* Re-enable clicks for buttons */
+}
+
+.dashboard-actions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.top-row-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.close-universe-btn {
+  font-size: 2.5rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+.close-universe-btn:hover {
+  transform: scale(1.2);
+  color: #7c3aed;
+}
+
+.universe-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  overflow: visible;
+  transition: transform 0.1s linear; /* Smooth panning */
+}
+
+.space-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* Crucial: Let clicks pass through */
+}
+
+#bg-space-canvas {
+  z-index: 0; /* Behind universe projects */
+}
+
+.universe-coords {
+  background: rgba(20, 20, 40, 0.8);
+  border: 1px solid rgba(124, 58, 237, 0.5);
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: #fff;
+  font-family: 'Inter', monospace;
+  font-size: 1.1rem;
+  font-weight: 600;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.3);
+  pointer-events: none;
+}
+
+.radar-toggle-btn {
+  background: rgba(20, 20, 40, 0.8);
+  border: 1px solid rgba(124, 58, 237, 0.5);
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.3);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.radar-toggle-btn:hover {
+  background: #7c3aed;
+  box-shadow: 0 0 20px #7c3aed;
+}
+
+.recenter-btn {
+  background: rgba(20, 20, 40, 0.8);
+  border: 1px solid rgba(124, 58, 237, 0.5);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+
+
+.recenter-btn:hover {
+  transform: scale(1.1);
+  background: rgba(124, 58, 237, 0.8);
+  box-shadow: 0 0 25px rgba(124, 58, 237, 0.6);
+}
+
+@media (max-width: 768px) {
+  .universe-coords {
+    bottom: auto;
+    top: 20px;
+    left: 20px;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+  .recenter-btn {
+    bottom: auto;
+    top: 70px;
+    right: auto;
+    left: 20px;
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 768px) {
+    padding: 10px;
+  }
+  .universe-dashboard {
+    padding: 20px;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+  }
+  .top-row-controls {
+    justify-content: space-between;
+  }
+  .dashboard-actions {
+    justify-content: space-between;
+  }
+}
