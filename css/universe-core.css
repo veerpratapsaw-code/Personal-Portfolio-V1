@@ -1,4 +1,4 @@
-﻿/* --- Big Bang Overlays --- */
+/* --- Big Bang Overlays --- */
 .dim-overlay {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -213,9 +213,8 @@
 }
 
 @media (max-width: 768px) {
-    padding: 10px;
-  }
-  .universe-dashboard {
+
+.universe-dashboard {
     padding: 20px;
     top: 10px;
     left: 10px;
