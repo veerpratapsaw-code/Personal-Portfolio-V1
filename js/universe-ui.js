@@ -41,7 +41,7 @@
     const groups = {
       'software': 'Software Engineering',
       'robotics': 'Robotics & Hardware',
-      'models': 'Physical Models'
+      'models':   'Physical Models'
     };
 
     if (radarContent) {

@@ -41,6 +41,19 @@ document.addEventListener("DOMContentLoaded", () => {
         contextMenu.classList.remove('active');
       }
     });
+
+    // Close universe if jumping to a section from context menu
+    const sectionLinks = contextMenu.querySelectorAll('a[href^="#"]');
+    const universeModal = document.getElementById('universe-modal');
+    const closeUniverseBtn = document.getElementById('close-universe');
+    
+    sectionLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (universeModal && !universeModal.classList.contains('hidden') && closeUniverseBtn) {
+          closeUniverseBtn.click(); // Trigger the cinematic close sequence
+        }
+      });
+    });
   }
 
   // Share Portfolio functionality
@@ -74,12 +87,13 @@ document.addEventListener("DOMContentLoaded", () => {
         new QRCode(document.getElementById("qrcode"), {
           text: window.location.href, // QR Code text
           width: 200,
+          height: 200,
           drawer: 'canvas',
           logo: "assets/logo_images/logoMe white.webp", // User's logo
           logoWidth: 60,
           logoHeight: 60,
-          logoBackgroundColor: 'transparent',
-          logoBackgroundTransparent: true
+          logoBackgroundColor: '#ffffff',
+          logoBackgroundTransparent: false
         });
         qrGenerated = true;
       }

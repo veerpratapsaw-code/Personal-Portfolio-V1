@@ -158,23 +158,54 @@
 }
 
 .universe-btn {
-  background: linear-gradient(45deg, #7c3aed, #4f46e5);
+  background: linear-gradient(45deg, #7c3aed, #4f46e5, #7c3aed);
+  background-size: 200% auto;
   color: white;
   border: none;
-  padding: 15px 30px;
-  font-size: 1.1rem;
+  padding: 18px 35px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
   font-family: "google sans flex", sans-serif;
-  border-radius: 30px;
+  border-radius: 40px;
   cursor: pointer;
-  box-shadow: 0 10px 20px rgba(124, 58, 237, 0.3);
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  animation: cosmic-pulse 3s infinite, gradient-flow 4s linear infinite;
+}
+
+@keyframes gradient-flow {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes cosmic-pulse {
+  0% { box-shadow: 0 0 20px rgba(124, 58, 237, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.1); }
+  50% { box-shadow: 0 0 40px rgba(79, 70, 229, 0.8), inset 0 0 20px rgba(255, 255, 255, 0.3); }
+  100% { box-shadow: 0 0 20px rgba(124, 58, 237, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.1); }
+}
+
+.universe-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 50%; height: 100%;
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-25deg);
+  animation: sweep 4s infinite;
+}
+
+@keyframes sweep {
+  0% { left: -100%; }
+  20% { left: 200%; }
+  100% { left: 200%; }
 }
 
 .universe-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 25px rgba(124, 58, 237, 0.5);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(124, 58, 237, 0.7);
 }
 
 .universe-btn.sparking {
